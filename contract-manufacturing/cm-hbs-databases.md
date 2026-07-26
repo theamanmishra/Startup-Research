@@ -1,55 +1,51 @@
 # HBS Baker Library databases — mapped to CM-dive tasks
 
-> **⚠ INCOMPLETE — 28 of 162.** The live A–Z list has **162 databases** (Aman, reading the page directly, 2026-07-26). This file's inventory came from a search-index sweep after the site blocked automated access and covers ~17% — biased toward well-trafficked databases. **Do not treat the inventory section as the list of what HBS has.** The task-mapping tiers below remain valid for the databases they name. Pending: Aman pastes the full 162-entry list into `hbs-databases-raw.txt`; then this file gets reconciled. (This failure is now codified as hard rule 8 in `/CLAUDE.md`.)
+**Authoritative, reconciled 2026-07-26.** Source: full A–Z export (162 databases) provided by Aman from the live page; raw list with descriptions committed as `hbs-databases-raw.csv` in this folder. This supersedes the earlier search-index partial (28 entries, ~17% coverage — that failure is codified as hard rule 8 in `/CLAUDE.md`).
 
-**Date:** 2026-07-26. Enumerated via search-indexed library.hbs.edu pages (the A–Z page itself blocks automated access). Each entry verified to exist as a Baker Library database page unless flagged. Master list: https://www.library.hbs.edu/databases-cases-and-more/databases · Baker's own F&B research guide: https://www.library.hbs.edu/Find/Guides/Food-Beverage · "Which company database to choose": https://www.library.hbs.edu/services/help-center/company-databases-which-database-to-choose
+## Reconciliation vs the earlier partial
+
+- **Wrongly listed before, actually absent from Baker's list:** Mintel Market Sizes (only Mintel Reports exists) · "Mergent Fixed Income" was right but irrelevant. **PrivCo, Tracxn, Forrester: confirmed NOT at Baker** (previously "unconfirmed").
+- **Previously unconfirmed, now confirmed:** Crunchbase (#40) · D&B Hoovers itself (#41, directly listed).
+- **Missed entirely by the partial and relevant to this dive:** Leadership Connect · Ward's Business Directory · Revelio · BoardEx · BCC Research · Technavio · RKMA Market Research · S&P Capital IQ Pro · SDC Platinum · ProQuest TDM Studio · Prowess · EIU · Nexis Uni (see below).
 
 ## Tier 1 — use immediately (each clears a named gap in our files)
 
-| Database | What it is | Exact job in this dive |
-|---|---|---|
-| **AlphaSense** (https://www.library.hbs.edu/databases-cases-and-more/databases/alphasense) | Market intelligence + **expert-call transcript library** (buy-side investor interviews with industry operators), with GenAI search (how-to: https://www.library.hbs.edu/services/help-center/locating-expert-call-transcripts-in-alphasense) | **The single highest-value resource here.** Search expert calls: "co-manufacturer", "co-packer", "contract manufacturing food", "Hearthside", "TreeHouse", "Nulogy", "Keychain". Operators talking economics = interviews-before-interviews: margin structure, software spend, audit burden, deduction pain. Feeds P3 deep map + pressure-tests all four whitespace cells before you spend a single coffee. |
-| **PitchBook** (https://www.library.hbs.edu/databases-cases-and-more/databases/pitchbook) | Private-company deals, funding, investors | Clears the arena's `[UNVERIFIED]` funding flags: **Takt** (paywalled in our sweep), Semia, Allera, Interlock; Keychain round detail; find co-man-targeting startups we missed (search verticals: "contract manufacturing", "co-packing"). Also: PE owners of CMs (who's consolidating). |
-| **IBISWorld** (https://www.library.hbs.edu/databases-cases-and-more/databases/ibisworld) | US industry reports incl. **Industry Spotlight niche reports on small-business industries** | Look for a Contract Packaging / co-manufacturing specialized report → credible market size, growth, **industry-average margins and cost structure** — fixes the missing co-man EBITDA benchmark and replaces our report-mill sizing range. Also NAICS 311 sub-industry reports for per-step cost structure in P3. |
-| **D&B Hoovers** (access confirmed by Aman; Baker also lists D&B private-company data) | Company screener with **named contacts + emails** | The sampling frame (recipe in `cm-outreach-playbook.md` §2). |
-| **Orbis** (listed at Baker; access confirmed by Aman) | Global private-company DB with **ownership trees** | Tag frame companies family vs PE-owned vs corporate (methodology §2). |
-
-## Tier 2 — supporting
-
-| Database | Job here |
+| Database | Job in this dive |
 |---|---|
-| **Capital IQ** (https://www.library.hbs.edu/databases-cases-and-more/databases/capital-iq) | Financials for the few public/debt-issuing comps (TreeHouse; PE-owned CMs with rated debt → real margin data); M&A comps for the consolidation why-now. |
-| **Mergent Intellect** (help-center refs; D&B-data-based) | Backup company screener; company histories. |
-| **Mintel Reports** (https://www.library.hbs.edu/databases-cases-and-more/databases/mintel-reports) + Mintel Market Sizes | Demand side: private-label and category trends pulling co-man volume. |
-| **Euromonitor Passport** (https://www.library.hbs.edu/databases-cases-and-more/databases/passport) | Cross-country packaged-food data → the honest H1 India↔US comparison. |
-| **EMIS** | Emerging-markets company/industry data → India side of H1 if we ever need it sourced properly. |
-| **Statista** | Quick sourced stats (e.g., mfg labor shortage numbers to replace the `[re-verify]` 622k figure). |
-| **Factiva / ABI-ProQuest / Business Source Complete** | Trade-press archive (Food Business News, Packaging World, Food Dive) for P3 failure-mode evidence and CM↔brand dispute stories. |
-| **Bloomberg / LSEG Workspace** (on-campus) | Public comps, analyst reports on TreeHouse/private-label sector. |
+| **AlphaSense** (#8) | Expert-call transcripts on "co-manufacturer / co-packer / Hearthside / TreeHouse / Nulogy / Keychain" = interviews-before-interviews on margins, software spend, audit burden. Baker how-to: https://www.library.hbs.edu/services/help-center/locating-expert-call-transcripts-in-alphasense |
+| **PitchBook** (#115) | Clear arena `[UNVERIFIED]` funding flags (Takt, Semia, Allera, Interlock, Keychain detail); deal search for missed co-man-software entrants. ⚠ Baker's note: automated scraping prohibited — manual lookups only. |
+| **IBISWorld** (#77) | Contract-packaging / NAICS 311 sub-industry reports → credible market size + industry cost structure/margins (fixes our two weakest numbers). |
+| **D&B Hoovers** (#41) | The sampling frame: NAICS 311+3121 · US · $5–500M rev · description keywords "co-pack / contract manufactur / private label" → export with contacts (recipe in `cm-outreach-playbook.md` §2). |
+| **Orbis** (#109) | Ownership trees → tag frame companies family vs PE-owned (methodology §3 quota). |
 
-## Full inventory of Baker databases verified via indexed pages (28, sweep of 2026-07-26)
+## Tier 2 — supporting, by task
 
-**Company/private-company data:** Capital IQ · Orbis · D&B Private Company Listings · Mergent Intellect · Infogroup US Historical Business Data · FactSet · Compustat (via WRDS) · WRDS
-**Startup/PE/VC:** PitchBook (+ PitchBook Datafeed dataset) · Preqin · CB Insights *(confirmed — corrects earlier "not confirmed" flag; use for arena cross-check)*
-**Industry/market research:** IBISWorld · Mintel Reports · Mintel Market Sizes · Euromonitor Passport · Statista · EMIS · Frost & Sullivan *(manufacturing-tech reports — relevant)* · Gartner *(confirmed — corrects earlier flag)* · eMarketer · S&P NetAdvantage
-**Intelligence/transcripts:** AlphaSense
-**News/articles:** Factiva · Business Source Complete · ABI/ProQuest
-**Markets/terminals:** Bloomberg · LSEG Workspace · Morningstar Direct
-Baker help-center comparison pages worth reading: "Company databases: which to choose" · "VCPE Database Comparison" · "Target List: screen for companies by industry, location, and size" (https://www.library.hbs.edu/services/help-center/target-list-screen-for-companies-by-industry-location-and-size — directly relevant to the sampling frame).
+**Outreach & people (new finds):**
+- **Leadership Connect** (#88) — background + **contact info** for US business leaders; check coverage of mid-market CM executives before buying LinkedIn InMail credits.
+- **BoardEx** (#18) — board/senior-manager networks → find warm paths from HBS-connected directors into CMs.
+- **Revelio** (#130) — workforce database from public profiles → headcount/role mix of private CMs (validates size tiers; sizes the QA/maintenance labor-pain hypothesis).
+- **Ward's Business Directory** (#157) — 100k+ US public/private firms → frame cross-check against the Hoovers export (coverage-bias control from methodology §2).
 
-**Completeness caveat:** this is what search-engine indexing exposes, NOT the authoritative A–Z list — the live page blocks automated access and archive.org is unreachable from this environment, so the true total is unknown to Claude and the list above is a floor, not a census. **Ground truth in 30 seconds:** open the A–Z page, select-all, and paste into `hbs-databases-raw.txt` in this folder; Claude will reconcile and finalize this mapping. Still unconfirmed either way: PrivCo · Tracxn · Forrester (referenced in help pages but no database page found) · Crunchbase (mentioned only as a third-party data source). Baker also purchases reports on request — ask a librarian for the CPA 2025 State of the Industry Report, the industry's primary source.
+**Industry & market reports:** BCC Research (#14) · Technavio (#147) · RKMA Market Research (#131) · Frost & Sullivan (#67) · Statista (#145) · Mintel Reports (#99 — note: in-person access currently broken per Baker) · Passport/Euromonitor (#111) · S&P NetAdvantage (#142) · EIU (#48). Try each for contract-manufacturing/private-label coverage; report titles + years go into `cm-market-structure.md` as sources.
 
-## Suggested first session in the library (90 min, in this order)
+**Financials & M&A (consolidation why-now):** Capital IQ (#25) · **S&P Capital IQ Pro** (#133) · **SDC Platinum** (#136) · FactSet (#59) · Preqin (#118 — access currently broken per Baker) · CB Insights (#27) · Crunchbase (#40) · Private Equity International (#119).
 
-1. **AlphaSense:** expert-call search "co-manufacturer OR co-packer" → skim 5–10 transcripts; clip margin/software-spend/audit quotes into `research-2026-MM-DD-alphasense-expert-calls.md`.
-2. **IBISWorld:** pull the contract-packaging/co-man report PDF → commit key pages' numbers (with report title/year as source) into `cm-market-structure.md` revisions.
-3. **PitchBook:** look up Takt, Semia, Allera, Interlock, Keychain → screenshot/fill arena funding gaps; run a "contract manufacturing software" deal search for missed entrants.
-4. **Hoovers:** run the frame export (playbook §2) → commit raw CSV.
-5. **Orbis:** ownership batch for the export → commit.
+**News & text-mining:** Factiva (#58) · Nexis Uni (#106) · Business Source Complete (#22) · ABI/ProQuest (#2) · **ProQuest TDM Studio** (#123 — text-mine trade press at scale; optional P3 tool for quantifying failure-mode mentions like "chargeback", "customer audit").
 
-Then hand the exports to Claude for cleaning, enrichment, quota application, and the rebuilt outreach list (methodology §8).
+**H1 India comparison (now properly doable):** **Prowess** (#124 — 40k+ Indian companies incl. private) · Indiastat (#80) · CapExdx (#23) · EMIS (#51) · States of India (#144).
 
-## Review flags
+**Misc. confirmed & mostly out of scope for this dive:** the remaining ~100 entries are finance/markets academic data (WRDS, CRSP, Compustat, TAQ, OptionMetrics…), region/sector news, ESG, real estate, healthcare, historical archives — full list in `hbs-databases-raw.csv`.
 
-- Database availability claims rest on indexed library.hbs.edu pages, not the live A–Z list (blocked); a database could have been dropped since indexing. Verify at first login.
-- Whether IBISWorld carries a co-man-specific report is an expectation, not a verified fact — flag if absent and fall back to the CPA report via librarian purchase.
+## Access notes from the export (as of 2026-07-26)
+
+Preqin: HarvardKey access down · Mintel: in-person access down · Bloomberg: new-account setup down · Capital Changes: down · VitalLaw: visitor access down · PitchBook: no automated scraping.
+
+## Suggested first library session (90 min, in order)
+
+1. AlphaSense expert-call sweep → clip quotes into `research-2026-MM-DD-alphasense-expert-calls.md`.
+2. IBISWorld contract-packaging report → numbers into `cm-market-structure.md` revision.
+3. PitchBook lookups (Takt, Semia, Allera, Interlock, Keychain) → fill arena funding gaps.
+4. Hoovers frame export + Orbis ownership batch → commit raw CSVs.
+5. (5 min) Leadership Connect: spot-check whether it has contacts for 3 CMs from the seed list.
+
+Also: ask a librarian to purchase the **CPA 2025 State of the Industry Report** (industry's primary source; not in any Baker database).
