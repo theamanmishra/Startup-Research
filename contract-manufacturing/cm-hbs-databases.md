@@ -25,9 +25,17 @@
 | **Factiva / ABI-ProQuest / Business Source Complete** | Trade-press archive (Food Business News, Packaging World, Food Dive) for P3 failure-mode evidence and CM↔brand dispute stories. |
 | **Bloomberg / LSEG Workspace** (on-campus) | Public comps, analyst reports on TreeHouse/private-label sector. |
 
-## Not confirmed at Baker (don't assume)
+## Full inventory of Baker databases verified via indexed pages (28, sweep of 2026-07-26)
 
-PrivCo (no Baker page found in sweep) · CB Insights · Tracxn · Gartner/Forrester `[UNVERIFIED — check the A–Z page directly; Baker also purchases reports on request — ask a librarian for the CPA 2025 State of the Industry Report, the industry's primary source]`
+**Company/private-company data:** Capital IQ · Orbis · D&B Private Company Listings · Mergent Intellect · Infogroup US Historical Business Data · FactSet · Compustat (via WRDS) · WRDS
+**Startup/PE/VC:** PitchBook (+ PitchBook Datafeed dataset) · Preqin · CB Insights *(confirmed — corrects earlier "not confirmed" flag; use for arena cross-check)*
+**Industry/market research:** IBISWorld · Mintel Reports · Mintel Market Sizes · Euromonitor Passport · Statista · EMIS · Frost & Sullivan *(manufacturing-tech reports — relevant)* · Gartner *(confirmed — corrects earlier flag)* · eMarketer · S&P NetAdvantage
+**Intelligence/transcripts:** AlphaSense
+**News/articles:** Factiva · Business Source Complete · ABI/ProQuest
+**Markets/terminals:** Bloomberg · LSEG Workspace · Morningstar Direct
+Baker help-center comparison pages worth reading: "Company databases: which to choose" · "VCPE Database Comparison" · "Target List: screen for companies by industry, location, and size" (https://www.library.hbs.edu/services/help-center/target-list-screen-for-companies-by-industry-location-and-size — directly relevant to the sampling frame).
+
+**Completeness caveat:** this is what search-engine indexing exposes, NOT the authoritative A–Z list — the live page blocks automated access and archive.org is unreachable from this environment, so the true total is unknown to Claude and the list above is a floor, not a census. **Ground truth in 30 seconds:** open the A–Z page, select-all, and paste into `hbs-databases-raw.txt` in this folder; Claude will reconcile and finalize this mapping. Still unconfirmed either way: PrivCo · Tracxn · Forrester (referenced in help pages but no database page found) · Crunchbase (mentioned only as a third-party data source). Baker also purchases reports on request — ask a librarian for the CPA 2025 State of the Industry Report, the industry's primary source.
 
 ## Suggested first session in the library (90 min, in this order)
 
