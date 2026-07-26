@@ -21,6 +21,7 @@ Structured startup-ideation for Aman (ex-ITC CPG supply chain & ops, HBS MBA, AI
 5. **Arena before harvest.** Map funded competitors and incumbent vendors by value-chain step *before* harvesting problems. Every inventory row gets a `nearest_funded_competitor` entry or `none found — searched: [queries used]`.
 6. **Desk output is a hypothesis list.** Nothing is "validated" until it has interview evidence. Each surviving problem carries its single riskiest assumption, phrased as a Mom-Test-able question about past behavior.
 7. **Self-review pass.** Before finishing any task, re-read the output against rules 1–4 and *surface* violations in a `## Review flags` section rather than silently fixing or ignoring them.
+8. **Access failure = full stop, not workaround.** When Aman asks for a specific source (website, database, document) and it is inaccessible, STOP and report the exact block so access can be figured out together. Do NOT substitute a partial reconstruction (search snippets, caches, model memory) and deliver it as the result — caveats do not make a partial deliverable safe; it anchors decisions on incomplete data. (Failure case, 2026-07-26: Baker Library A–Z database list has 162 entries; the site blocked automated access; a search-index sweep surfaced 28 and was delivered as an inventory. 17% coverage, presented politely, is still wrong.) A workaround may run only after Aman has seen the blocker and explicitly approved it, and its coverage limit goes at the top of the output, not in a footnote.
 
 ## Tracker conventions
 

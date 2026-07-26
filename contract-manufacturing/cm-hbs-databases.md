@@ -1,5 +1,7 @@
 # HBS Baker Library databases — mapped to CM-dive tasks
 
+> **⚠ INCOMPLETE — 28 of 162.** The live A–Z list has **162 databases** (Aman, reading the page directly, 2026-07-26). This file's inventory came from a search-index sweep after the site blocked automated access and covers ~17% — biased toward well-trafficked databases. **Do not treat the inventory section as the list of what HBS has.** The task-mapping tiers below remain valid for the databases they name. Pending: Aman pastes the full 162-entry list into `hbs-databases-raw.txt`; then this file gets reconciled. (This failure is now codified as hard rule 8 in `/CLAUDE.md`.)
+
 **Date:** 2026-07-26. Enumerated via search-indexed library.hbs.edu pages (the A–Z page itself blocks automated access). Each entry verified to exist as a Baker Library database page unless flagged. Master list: https://www.library.hbs.edu/databases-cases-and-more/databases · Baker's own F&B research guide: https://www.library.hbs.edu/Find/Guides/Food-Beverage · "Which company database to choose": https://www.library.hbs.edu/services/help-center/company-databases-which-database-to-choose
 
 ## Tier 1 — use immediately (each clears a named gap in our files)
