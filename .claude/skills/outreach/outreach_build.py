@@ -48,12 +48,13 @@ TRACKER_COLUMNS = ["Company", "Rank", "Contact", "Title", "Email", "Email basis"
                    "Reply?", "Notes"]
 
 # NO signature block: Outlook auto-appends the sender signature; including one here duplicates it.
-# FROZEN BODY - Aman's verbatim. Edit only with Aman's explicit approval, never as a side effect.
+# FROZEN BODY - Aman's verbatim, mirroring Adarsh Kumar's proven OEM email (sent 27 Jul 2026).
+# Edit only with Aman's explicit approval, never as a side effect.
 BODY = """<html><body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt;">
 <p>{salutation}</p>
-<p>I am Aman, a Harvard Business School student. Before HBS I spent five years in supply chain and operations at ITC, one of India's largest packaged foods companies, working across manufacturing, planning, and distribution. Since then I have worked with AI startups on how these tools apply to physical operations.</p>
-<p>As part of a project, I am studying the current challenges in contract food manufacturing and how AI can help solve them. Among the issues that come up repeatedly in my research is the cost of proving quality to every brand customer separately, because each one audits the same plant against its own paperwork. During my research, I read that at {short}, {insight}.</p>
-<p>I would value 30 minutes of your time to understand the problems you are facing today and whether they can be solved using modern technology.</p>
+<p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have a combined decade of experience in operations, management, manufacturing, and supply chain. I spent five years running supply chain and new product development at ITC, one of India's largest packaged foods companies, and we've spent the last few years working at frontier AI startups in SF, Boston, and India.</p>
+<p>As part of a project, we're studying the current challenges in contract food manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the challenge of proving the same quality system to every brand customer separately, because each one audits the plant against its own standard. During our research, we read that at {short}, {insight}.</p>
+<p>We would love to get 30 minutes of your time to deeply understand the problems you're facing today and whether we can help solve them using modern technology.</p>
 </body></html>"""
 
 
