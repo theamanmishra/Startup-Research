@@ -12,6 +12,8 @@ Adapted from Adarsh Kumar's OEM outreach package (shared 2026-07-28), retargeted
 
 Per company the output is: up to eight double-confirmed contacts ranked 1–8, one insight clause, the matching `.eml` drafts, rows in `outreach-tracker.csv`. **Never send anything — Aman sends from Outlook.**
 
+**Email is the only channel.** Aman does not cold-call. A company with no confirmable email pattern is parked, not phoned. This makes step 1 the critical path: most addresses are DERIVED from a confirmed pattern, not looked up. `cm-companies.csv` holds a real address for only 139 of 1,155 companies, but 1,080 have a website, so the pattern is confirmable for most of the universe. A company is workable when its domain yields two verbatim published addresses; it is parked when it does not.
+
 ## The approach (why these targets, this frame)
 
 An HBS student studying how contract food manufacturers run their operations and where AI helps. The reader is an owner, president, COO, plant manager, or quality director at a private, family- or PE-owned co-manufacturer or co-packer. Reply rate is the goal. Public companies route inbound through IR — skip them. Research asks reply at 15–40%; anything that smells like a vendor pitch halves it. The email names one industry issue (every brand customer audits the same plant against its own paperwork) with "Among the issues…" so the reader is not boxed in and can bring their own problem to the call.
@@ -43,16 +45,18 @@ The orchestrator itself does the judgment and the writes: reviews verdicts, sets
 
 ## Steps per company
 
-**0. Choose.** User-named, else the highest-ranked `cm-companies.csv` rows not yet in the tracker, Tier A first. Skip public companies. Check the tracker for a direct competitor contacted the same week — if so, never mention one to the other, and avoid insights whose natural reply is "who else are you talking to?"
+**0. Choose.** User-named, else the highest-ranked `cm-companies.csv` rows not yet in the tracker, Tier A first, preferring rows that already carry a real email (the pattern is then free) and otherwise rows with a website. Skip public companies. Skip rows with no website — there is no path to an address. Check the tracker for a direct competitor contacted the same week — if so, never mention one to the other, and avoid insights whose natural reply is "who else are you talking to?"
 
 **1. Email pattern — double-confirmed.** Confirmed = TWO verbatim-published `@domain` addresses agreeing (press releases, PDF spec sheets, association profiles, certification directories, trade-show exhibitor pages, FDA/USDA registration documents), aggregator claims as support only. One verbatim or aggregator-only = flagged in the report. Always collect general inboxes (`info@`, `sales@`, `quality@`) — Aman sends a parallel test to one to catch bounces on inferred addresses.
-Note: `cm-companies.csv` already carries 581 real addresses lifted from the D&B export. A published address there proves the pattern; it does NOT prove the person still holds the role.
+Note: `cm-companies.csv` already carries real addresses for 139 companies, lifted from the D&B export. A published address there proves the pattern; it does NOT prove the person still holds the role.
+
+**Deriving addresses.** Once the pattern is double-confirmed, construct addresses for the ranked contacts from it and mark each `basis` as `derived from confirmed pattern {f}{last}@`. Never derive from a single published address, and never derive from a pattern guessed off the domain alone. If only one verbatim address exists, send to that person only and bench the rest, or park the company. A derived address always ships alongside the parallel general-inbox test so a bad derivation surfaces as a bounce on a known-good address.
 
 **2. Roster, top-down.** 10–12 candidates so eight survive: Owner/President/CEO, family owners in leadership, COO/CFO, VP Operations, Plant Manager, then Director of Quality / Food Safety / FSQA, Director of Sales or Business Development (the person who fields co-pack inquiries), R&D or Product Development. Each with exact title, source URL, date of most recent in-role signal.
 
 **3. Double-check every person.** Two independent signals the person holds the role NOW, the fresher the better. Kill signals: an aggregator profile showing a NEW employer, "former"/"ex-", retirement coverage, an obituary. Co-mans change hands often, so also check for an acquisition that replaced leadership — our own sweep found several 2025–26 ownership changes. Run the name search (`"<first> <last>" <company>`) and read the top 5–10 results. Same pass captures: (a) **salutation** — a published source using he/she for the person; never infer from a name; no source = `Dear <First> <Last>,`; shared family surnames = `Dear <First>,`; (b) **the current title verbatim**. Single-source people get flagged and preferably benched or replaced. Off-thesis roles (HR, marketing) are excluded even when senior — log the exclusion.
 
-**4. Pick eight, rank 1–8.** Top-down by seniority, ties broken by thesis fit: the quality/FSQA owner ranks high because the frozen body's industry issue is audit duplication, then operations, then the co-pack sales contact, then finance (chargebacks and yield true-ups are their pain), then non-operating family. At a 40-person family co-man there may only be three or four real contacts — send fewer rather than padding with irrelevant names.
+**4. Pick eight, rank 1–8.** Top-down by seniority, ties broken by thesis fit: the quality/FSQA owner ranks high because the frozen body's industry issue is audit duplication, then operations, then the co-pack sales contact, then finance (chargebacks and yield true-ups are their pain), then non-operating family. At a 40-person family co-man there may only be three or four real contacts — send fewer rather than padding with irrelevant names. Ranks below the real roster are left empty, not filled.
 
 **5. The insight — one clause, five gates.** The clause completes the frozen carrier "During my research, I read that at [Company], …". Dig at artifact level (certification directories, capabilities pages, customer/brand lists, plant lists, press releases, acquisition history); write at company level. Gates, in order:
 1. **Marries the industry issue** — it is the audit/quality-proof problem showing up at this company, so the reader connects it to the previous sentence without help.
@@ -66,10 +70,6 @@ Worked example: "you run co-packing for retail and foodservice brands across thr
 Spot-check one generated `.eml`. The proof pointer never enters an email.
 
 **7. Report.** Pattern status (double-confirmed or flagged), the contacts with ranks and flags (single-source, neutral salutation, weak recency), who was dropped and why, the insight clause with proof URLs, file paths, bounce-test inbox, competitor caveats. Log durable findings (for example "this co-man publishes no quality contact at all") in the vertical's research notes.
-
-## Phone path (this audience needs it)
-
-Only 139 of 1,155 companies have a usable email, but 1,026 have a phone. For Tier A companies with a phone and no email, the deliverable is a **call sheet row** instead of an `.eml`: company, best-guess role to ask for, switchboard number, the same insight clause as an opener, logged in the tracker with `Email basis = phone only`. Small family co-packers answer their own phones; this is not a lesser channel for them.
 
 ## Loop mode and follow-ups
 
