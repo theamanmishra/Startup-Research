@@ -52,8 +52,8 @@ TRACKER_COLUMNS = ["Company", "Rank", "Contact", "Title", "Email", "Email basis"
 # Edit only with Aman's explicit approval, never as a side effect.
 BODY = """<html><body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt;">
 <p>{salutation}</p>
-<p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have a combined decade of experience in operations, management, manufacturing, and supply chain. I spent five years running supply chain and new product development at ITC, one of India's largest packaged foods companies, and we've spent the last few years working at frontier AI startups in SF, Boston, and India.</p>
-<p>As part of a project, we're studying the current challenges in contract food manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the challenge of proving the same quality system to every brand customer separately, because each one audits the plant against its own standard. During our research, we read that at {short}, {insight}.</p>
+<p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have spent the last few years working at frontier AI startups in SF, Boston, and India.</p>
+<p>As part of a project, we're studying the current challenges in contract food manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the challenge of planning a shared plant around customer forecasts that keep moving, because the co-manufacturer absorbs the cost of the idle line and the extra changeover, not the brand. During our research, we read that at {short}, {insight}.</p>
 <p>We would love to get 30 minutes of your time to deeply understand the problems you're facing today and whether we can help solve them using modern technology.</p>
 </body></html>"""
 
