@@ -57,3 +57,67 @@ and market reports written from the brand's side.
 otherwise. The intersection of *real pain* and *AI-solvable* is narrow and specific: **the unpaid
 work between an inquiry and the first paid run** — quoting it, ingesting the spec, producing the
 documentation. That is where the email should point.
+
+---
+
+# Second AlphaSense report (2026-07-28) — the solvability question
+
+Query: mid-market F&B contract manufacturing, office/technical headcount, costing workflows,
+manual processes, IT systems. This one was aimed at *whether software can substitute for
+anything*, not at what hurts. Verbatim quotes and sourced figures below.
+
+## The three kill criteria, answered
+
+**1. Does the work exist in volume?** Yes, and the waste ratio is the finding of this dive:
+
+> "The conversion ratio of initial customer inquiries to actual commercialized, recurring production runs is estimated at **1:10 to 1:20**, translating to a conversion success rate of just **5% to 10%**." (mordorintelligence, via report)
+
+Nine to nineteen out of twenty quotes produce nothing, and each still costs technical time.
+
+**2. Is anyone employed doing it?** Yes, but thin — and now quantified:
+
+- $10–50M revenue: back-office of **5–12 people**; QA managers handle technical specifications alongside food safety and audits.
+- $50–250M: back-office **15–40**; **1–2 customer service/sales support** staff for RFP intake, plus **1 documentation coordinator or specification specialist**.
+- $250–500M: back-office **50+**, including **2–4 technical services/compliance specialists** on labeling, supplier portals, document control.
+- **"a general industry ratio of 1 costing staff member for every $25M to $30M in annual revenue"**; quoting and costing rely on **1–3 dedicated professionals**. (bevindustry.com, via report)
+
+**3. Does the existing ERP already do it?** No — and the reasons are specific:
+
+> "mid-market food and beverage contract manufacturers still manage a massive portion of their **quoting, specification intake, and customer onboarding through manual spreadsheets, email, and paper**… raw material specification sheets or custom formulation recipes… frequently conducted using **disconnected PDF files, Word documents, or Excel spreadsheets**."
+
+> **Former Senior Sales Consulting Manager, NetSuite** (expert call, 18 Dec 2025): "mid-market companies are primarily driven to adopt cloud ERP due to inventory issues and siloed solutions," yet vendors face "**challenges in addressing deep, vertical-specific functionality**."
+
+> "standard generic ERP platforms **consistently fail to address the highly specific requirements of process manufacturing and recipe-driven production**."
+
+Systems in use: SAP S/4HANA, NetSuite, Infor CloudSuite, Plex, plus mid-market platforms Doss and FoodReady.
+
+## Evidence the fix actually works
+
+> **Grape King Bio 2025 ESG report**: "the average processing time for product quotations was reduced from **2.4 days to 1.5 days, representing a 37.5% improvement**" after a PLM implementation. Also: "the **formula-to-BOM conversion process was automated through one-click generation, reducing processing time by approximately 50%** and lowering the risk of manual data entry errors."
+
+> **Bega Cheese**: 11 RPA bots across Collections, Claims, A/R, A/P and Pricing Operations reduced Centres of Excellence from **~120 to 70 employees (42%)** — while cautioning that "highly skilled roles required for bot enhancement and maintenance" remain.
+
+## The confirmed risk
+
+> **Former VP, Quality Sterling Group** on SAP: "its weakness is that it **requires a lot of front-end engineered clean data**… if you don't have that aspect, I could see them using this system not to its fullest," because "an ERP system is as good as the amount of effort pre-system implementation work you do up front."
+
+This is the data-availability risk named before the report, now confirmed by an operator. It is the
+single biggest threat to the thesis and the first thing to test in interviews.
+
+## Other findings worth keeping
+
+- **Onboarding**: 6–18 months typical, up to 24 for regulated lines. **Borealis Foods Q1 2026 10-Q**: margin comparison "reflects a product mix shift… as we onboard new partners initial production runs which typically carry lower per-unit margins as lines are qualified."
+- **Yield liability is contractual**: the Blue Apron / FreshRealm agreement makes "waste and yield losses in excess of the applicable Fulfillment Yield Loss for each item… FreshRealm's responsibility and… at FreshRealm's cost and expense," with expected losses pre-built into the BOM.
+- **Disputes go legal**: California Custom Beverage filed arbitration against Reed's (Jan 2024) over "product inputs, shrinkage, and quality assurance"; Ascot Valley Foods was ordered to disgorge **$2,298,114** to ADF Foods over a co-pack agreement and trade-secret counterclaims.
+- **Scale-up costs are large**: SunOpta absorbed **$16.3M** in production-line scale-up costs in 2024, gross margin 13.3%; a faulty seal from a third-party servicer caused **$3.4M** in product withdrawal costs in 2023.
+
+## Verdict
+
+The thesis survives all three kill criteria. The specific, AI-addressable, evidence-backed problem is:
+**inquiry screening and costing, where 90–95% of the technical work produces no revenue, the inputs
+arrive as unstructured documents, and the incumbent ERP explicitly does not handle recipe-driven
+vertical workflows.**
+
+Remaining honest caveats: the automatable headcount is small (1–3 costing staff at a mid-market
+plant), which caps deal size; and the clean-data problem is real and operator-confirmed. Both are
+interview questions, not desk questions.
