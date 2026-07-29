@@ -52,7 +52,7 @@ TRACKER_COLUMNS = ["Company", "Rank", "Contact", "Title", "Email", "Email basis"
 # Edit only with Aman's explicit approval, never as a side effect.
 BODY = """<html><body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt;">
 <p>{salutation}</p>
-<p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have a combined decade worth of experience in operations, management, manufacturing and supply chain. We've spent the last few years working at frontier AI startups in SF, Boston and India.</p>
+<p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have a combined 10+ years of experience in operations, management, manufacturing and supply chain. We've spent the last few years working at frontier AI startups in SF, Boston and India.</p>
 <p>As part of a project, we're studying the current challenges in contract food and beverages manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the amount of manual work behind customer documentation, and what a single error in it costs. During our research, we read that at {short}, {insight}.</p>
 <p>We would love to get 30 minutes of your time to deeply understand the problems you're facing today and whether we can help solve them using modern technology.</p>
 </body></html>"""
