@@ -107,3 +107,89 @@ eliminate a lot of that manual effort that goes into the data entry component of
 3. Who fills in customer quality questionnaires? How long does one take?
 4. When did a COA or spec last get disputed, and what did it cost to resolve?
 5. What have you bought to make this easier? What did you stop using, and why?
+
+---
+
+# Validation pass — fourth AlphaSense report (2026-07-28)
+
+Ran the task-by-task prompt. The report has a section literally titled "Administrative Burdens:
+Verified Task-by-Task Operator Voice." Result: two tasks strengthened, **one task killed**, two
+still unevidenced. Detail below, then a revised wedge.
+
+## The asymmetry hypothesis — now stated explicitly
+
+> "When a co-manufacturer scales their business by taking on multiple unique brand customers, **the administrative burden does not scale linearly; it multiplies**. Because there is **no industry standardization**, every brand brings its own unique formulations, custom quality questionnaires, and private label packaging requirements, which **forces the co-packer's administrative team to run highly fragmented processes for each account**."
+
+Caveat: this is AlphaSense's synthesis, supported by a prospectus from an FMCG contract
+manufacturer, not by a co-man operator complaining in their own words. Upgrade from `[H]` to
+**`[E-weak]`** — stated by an industry source, not yet by a plant.
+
+## Task-by-task verdicts
+
+**Task 1 — spec intake into item master/BOM. `[E-weak]`**
+Confirmed as manual and error-sensitive, but the supporting quote is generic (Upfield: "making
+processes more user-friendly and less prone to human error, with a particular focus on
+strengthening data management"). No hours quantified.
+
+**Task 2 — recipe → costed BOM. `[E-weak, cross-functional]`**
+> **Former VP Supply Chain, Strategy & Optimization** (expert call, 23 Jul 2026): "Brand and operations finance are two different groups, and they sit off to the side until we get all this done. **This packet is then handed over to the brand and operations finance and sales and marketing** to take a look at and see if it makes sense."
+
+The report's own note: "direct verbatim quotes detailing the exact administrative hours spent
+re-keying recipe weights into internal BOM systems **remain thin in public disclosures**." So the
+problem is coordination across silos, not obviously re-keying volume.
+
+**Task 3 — checking incoming ingredient documents. ❌ KILLED as a wedge.**
+> **VP of Technical Services, IEH Laboratories** (expert call, 5 Apr 2026): "Normally there's about six [results on a COA]. **If there's 30 COAs, they'll have to spend 10 minutes looking at them.**"
+
+Twenty seconds per COA. This is cheap, not painful. Automating it saves minutes per week. Drop it.
+(The requirement itself is real — JBSS: "Certificates of Analysis are required for all received
+materials and must be provided to JBSS prior to acceptance" — but meeting it is not expensive.)
+
+**Task 4 — customer questionnaires. `[E]` requirement confirmed, cost not quantified.**
+Hain Celestial and Upfield both confirm suppliers must complete detailed questionnaires and
+self-assessments. Both quotes are **brands stating requirements**, not co-mans describing the
+burden. The multiplication claim above is what makes this expensive; that link is still weak.
+
+**Task 5 — producing lot COAs. `[E]` and the cost is physical, not clerical.**
+> **Tridge** (7 Jul 2026): "The cost of compliance shows up as **lab capacity, hold time, and occasional lot segregation — not just as 'paperwork.'**"
+> JBSS: "each lot must be sampled… according to a statistical sampling plan (ICMSF, FDA BAM)."
+
+Important reframe: product cannot ship until the COA is validated, so the bottleneck is lab
+throughput and hold time. Software does not fix a lab queue. Weakens Task 5 substantially.
+
+**Task 6 — spec change and label updates. `[E]` and digitization has a proven result.**
+> **Tasty Bite Eatables** (annual report, 22 Jul 2026): "we sustained **First Time Right (FTR) quality scores of over 99%, driven by the digitisation of change control** and continuous improvement processes."
+
+A minor label error can trigger a recall, so this is high-stakes and someone has already shown
+digitizing it moves a measurable number.
+
+**Task 7 — audit document packs. `[E-strong]` — the best-evidenced task.**
+> **Director of EHS, Shehadey Family Foods** (expert call, 25 Dec 2025): "We currently have a food certification called SQF. It requires us to have certain inspections, audits, other documentation on a **monthly and weekly basis** completed within the facility. **Right now, it's done just through an Excel.**"
+> **Upfield**: implementing SQF at one site took 90 days versus "an achievement that typically takes a year," requiring "cross-functional collaboration across Operations, Maintenance, Supply Chain, HR, and Health and Safety."
+
+A named operator, a named certification, a stated cadence, and the tool named as Excel.
+
+**Task 8 — screening and pricing inquiries. `[E]` and the cycle is long.**
+> **Representative Director and President, Natty Swanky Holdings / Grip Factory** (earnings call, 18 Mar 2026): "since each restaurant has its own particular preferences, **it takes many iterations from the initial discussion until contract signing, and currently it takes about a year or so to reach a contract**."
+
+## Systems evidence
+
+- **60% of sub-$1B food companies run on laptops and Excel**; deployed ERPs are described as a "necessary evil" lacking real-time production tracking.
+- Failed ERP implementations trace to "poor data quality and misalignment with plant floor realities."
+
+## New competitors surfaced
+
+- **SafetyChain** — and its weaknesses are named: > **Project Specialist & System Administrator, MaryAnn's Baking Co.** (expert call, 9 May 2024): SafetyChain "is valued for its ability to centralize documentation and provide auditor-specific access, but is **criticized for being laggy and lacking an automated scheduling system**."
+- **Redzone** — mentioned alongside SafetyChain.
+Both belong in `cm-arena.md`, together with Specright and FoodReady.
+
+## Revised wedge after validation
+
+Ranked by evidence strength, not by size of prize:
+
+1. **Audit and compliance documentation (Task 7)** — a named operator says it runs on Excel, weekly and monthly, for a mandatory certification. Errors are cheap (a human reviews before the auditor sees it). Incumbent SafetyChain has named gaps.
+2. **Change control (Task 6)** — high stakes, proven ROI at Tasty Bite.
+3. **Spec intake and questionnaires (Tasks 1 and 4)** — real, but their expense depends on the multiplication effect, which is still only industry-sourced.
+
+Dropped: **Task 3** (COA checking, measured at 20 seconds per document) and **Task 5** demoted
+(the constraint is lab capacity and hold time, not clerical work).
