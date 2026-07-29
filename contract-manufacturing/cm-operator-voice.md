@@ -121,3 +121,87 @@ vertical workflows.**
 Remaining honest caveats: the automatable headcount is small (1–3 costing staff at a mid-market
 plant), which caps deal size; and the clean-data problem is real and operator-confirmed. Both are
 interview questions, not desk questions.
+
+---
+
+# Third AlphaSense report (2026-07-28) — deployments, failures, and what operators want automated
+
+Query asked for evidence of AI/automation actually deployed, failures included, plus where the
+unstructured document work sits and what plants pay. This is the decisive report.
+
+## The work is email and spreadsheets, in an operator's own words
+
+> **Former Director of Product Management, Xometry** (expert call, 20 Jul 2026), on quoting and costing workflows: "**If the trope is paper and pencil, it's not. It's email and spreadsheets.**"
+
+> AlphaSense synthesis: "This reliance on spreadsheets and emails creates significant operational friction during the tech transfer and customer onboarding stages, where **product formulas and bills of materials (BOMs) must be manually compiled, validated, and transferred into internal systems**."
+
+## An operator names AI as the wanted fix, unprompted
+
+> **Director, Trans America** (expert call, 29 Dec 2025), describing BOM qualification: "It's going through and looking at all of the various MSDSes, all the various product certification sheets, and qualifying it based on the regional value content…"
+
+> Same expert, on where AI should go: "**Really, anything that deals with being able to eliminate workflow and simplify the process, you're trying to see ways that AI can come in and eliminate a lot of that manual effort that goes into the data entry component of it.**"
+
+The report notes manual data entry is "currently the single largest time sink for administrative staff."
+
+## The ongoing document load after onboarding
+
+> **Hain Celestial 10-K** (Sep 2025): co-packers must supply "**questionnaires, scientific data, certifications, affidavits, certificates of analysis and analytical testing**, where required."
+
+> **Gehl Foods supplier terms** (Feb 2026): "'Provider's Quality Documentation' means a certificate of analysis ('COA') and each other written or electronic communication/document relating to the quality and/or specifications of a product…" and compliance with the customer's supplier qualification program is a baseline condition of the relationship.
+
+> **General Manager, Wherehouse Beverage Co.** (expert call, 13 Jan 2026): "We used to pretty frequently pull competitive product and test it in our own quality lab for potency, and then also look at **their COAs actual versus advertised**."
+
+## Why the ERP does not absorb this
+
+> **Former VP Supply Chain, Strategy & Optimization, Quality Sterling Group** (expert call, 23 Jul 2026): "An ERP system is as good as the amount of effort pre-system implementation work you do up front." And: "The weakness is that it requires a lot of front-end engineered clean data. **A lot of people have tried away from it.** If you don't have that aspect, I could see them using this system not to its fullest."
+
+> **FoodReady** (press release, 14 Apr 2026): bridging food-safety regulation into production workflows "previously required expensive custom solutions **or additional staff**."
+
+> **Ty Cartwright, owner, Custom Beverage Concepts** (press release, 23 Jun 2026), on migrating to Plex: "Our goal was to move away from **disconnected systems and manual workarounds** toward a more streamlined, data-driven and resilient operation."
+
+## Automation works when narrowly targeted
+
+- **Bega Cheese** (Investor Day, 28 Apr 2026): 11 RPA bots across collections, claims, A/R, A/P and pricing cut back-office headcount **120 → 70**.
+- A European dairy leader: **215% improvement in mean-time-between-failures** from AI predictive maintenance over 12 months.
+- Report's own framing: returns come from "targeting specific back-office and asset-reliability pain points" rather than "broad, multi-year platform overhauls that often stall."
+
+## A real competitor, named
+
+> **Mike Boese, CEO, Specright** (18 Sep 2025): "**Traditional PLM systems were never built for the realities of fast-moving consumer goods**, like Food & Beverage products, where managing the complexity of ingredients, formulations, and packaging is critical."
+
+> **Andy Norman, CIO, Bob Evans Farms** (19 Sep 2025): "Expanding our partnership with Specright to manage specification data across the entire product life cycle…"
+
+Specright sells specification management to CPG. It is the closest thing found to a direct
+competitor for the spec/document thesis, and it appears to sell brand-side. Whether it serves
+co-manufacturers is an open question for the arena map.
+
+## `[DISCREPANCY]` — correcting the second report's headline numbers
+
+This report states plainly:
+
+> "Specific metrics detailing the precise number of personnel exclusively dedicated to quoting, the exact timeline required to complete a single costing sheet, or **the conversion ratio of initial customer inquiries to actual production runs are extremely thin in public filings and expert disclosures**."
+
+So the second report's "1:10 to 1:20 inquiry conversion" and "1 costing staff per $25M–$30M revenue"
+came from market-research sites (mordorintelligence, bevindustry.com), **not from operator
+disclosures**. They should be treated as secondary-source estimates, not evidenced facts, and both
+are interview questions. The qualitative finding — the work is manual and document-heavy — is
+directly operator-sourced and stands.
+
+## Other figures
+
+- Specialty co-packer **SG&A of 39–56% of revenue** during channel transitions; one mid-market operator cut 56% → 39% year over year.
+- An oatmilk brand disclosed **$4.8M in volume shortfall expenses** paid to co-packers in H1 2026; another operator expensed **£2.3m** of unallocated production overhead when volumes collapsed.
+- Minimum volume commitments are "rarely enforced without costly disputes"; customers "fail or refuse to meet minimum commitments, dispute amounts owing, seek to renegotiate, defer or terminate agreements, or request early release."
+- **PE ownership** brings "a level of analytics and rigor that allows smaller companies to behave like a big company when it comes to demand science."
+
+## Verdict after three reports
+
+The AI-addressable problem is now operator-evidenced rather than inferred: **the unstructured
+document work between a brand and a plant — specs, formulas, BOMs, COAs, customer quality
+questionnaires — which today runs on email and spreadsheets, which generic ERP explicitly does not
+absorb, and which an operator independently names as the place AI should be applied.**
+
+Open risks, unchanged and now sharper:
+1. Clean-data dependency, confirmed twice by the same expert.
+2. Specright already sells specification management into CPG; position unknown for co-mans.
+3. The volume metrics behind "how much of this work exists" remain secondary-sourced.
