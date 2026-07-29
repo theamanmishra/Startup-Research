@@ -25,7 +25,10 @@ Spec format:
   "slug":    "blount",                    // filename prefix
   "date":    "2026-07-28",                // drafted date for tracker
   "batch":   "2026-07-28",                // drafts subfolder; defaults to date
-  "insight": "you make soups for retail and foodservice brands under SQF certification",
+  // insight = observed fact + "so" + the documentation consequence it implies.
+  // The body closes it with "...and we would want to know how much of that is still
+  // manual today", which is what keeps the inference honest. See SKILL.md step 5.
+  "insight": "you make soups for retail and foodservice brands under SQF certification, so the same audit evidence has to be reshaped for every brand that asks for it",
   "proof":   "[proof: blountfinefoods.com/capabilities, SQF cert page]",  // tracker only
   "contacts": [
     {"rank":1, "name":"Todd Blount", "title":"President",
@@ -34,6 +37,10 @@ Spec format:
      "check":"CURRENT - company leadership page 2026 + trade press 2025", "notes":""}
   ]
 }
+
+Salutation rule (enforced below): "Dear Mr./Ms./Dr. <Last>," when a published source
+uses he/she for the person, otherwise "Dear <First>,". "Dear <First> <Last>," is
+rejected - it reads like a mailmerge. Courtesy titles are never inferred from a name.
 """
 import csv, json, os, sys
 
@@ -53,9 +60,24 @@ TRACKER_COLUMNS = ["Company", "Rank", "Contact", "Title", "Email", "Email basis"
 BODY = """<html><body style="font-family: Calibri, Arial, sans-serif; font-size: 11pt;">
 <p>{salutation}</p>
 <p>I am Aman, a Harvard Business School student. Adarsh (my classmate at HBS) and I have a combined 10+ years of experience in operations, management, manufacturing and supply chain. We've spent the last few years working at frontier AI startups in SF, Boston and India.</p>
-<p>As part of a project, we're studying the current challenges in contract food and beverages manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the amount of manual work behind customer documentation, and what a single error in it costs. During our research, we read that at {short}, {insight}.</p>
+<p>As part of a project, we're studying the current challenges in contract food and beverages manufacturing and how AI can help solve them. Among the issues that come up repeatedly in our research is the amount of manual work behind customer documentation, and what a single error in it costs. In {short}'s case, {insight}, and we would want to know how much of that is still manual today.</p>
 <p>We would love to get 30 minutes of your time to deeply understand the problems you're facing today and whether we can help solve them using modern technology.</p>
 </body></html>"""
+
+
+HONORIFICS = ("Mr.", "Ms.", "Mrs.", "Dr.", "Prof.")
+
+
+def check_salutation(s):
+    """Courtesy title + surname, or first name alone. Never 'Dear First Last,'."""
+    assert s.startswith("Dear ") and s.endswith(","), f"salutation must be 'Dear ...,': {s!r}"
+    words = s[len("Dear "):-1].split()
+    if words[0] in HONORIFICS:
+        assert len(words) == 2, f"honorific takes the surname only: {s!r}"
+    else:
+        assert len(words) == 1, (
+            f"no sourced courtesy title, so use the first name alone: {s!r}. "
+            "Never infer Mr./Ms. from a name - see SKILL.md step 3.")
 
 
 def build_eml(to, salutation, short, insight):
@@ -64,7 +86,10 @@ def build_eml(to, salutation, short, insight):
         headers.append(f"Cc: {CC}")
     headers += [f"Subject: {SUBJECT}", "MIME-Version: 1.0",
                 "Content-Type: text/html; charset=utf-8", ""]
+    check_salutation(salutation)
     assert insight and not insight.endswith("."), "insight clause must not end with a period"
+    assert " so " in insight, ("insight must be observed fact + ' so ' + the documentation "
+                               "consequence it implies - see SKILL.md step 5")
     body = BODY.format(salutation=salutation, short=short, insight=insight)
     assert "{" not in body, "unfilled placeholder"
     return "\n".join(headers) + "\n" + body
@@ -77,14 +102,41 @@ def load_tracker():
         return list(csv.DictReader(f))
 
 
+SEND_COLUMNS = ["Company", "Rank", "Contact", "To", "Cc", "Subject", "HtmlBody"]
+
+
+def write_send_batch(outdir, spec, emls):
+    """One CSV per batch folder, consumed by send_drafts.ps1 / send_drafts_mac.py so
+    Aman creates or sends the whole batch in one run instead of opening each .eml."""
+    path = os.path.join(outdir, "send-batch.csv")
+    rows = []
+    if os.path.exists(path):
+        with open(path, newline="") as f:
+            rows = [r for r in csv.DictReader(f) if r["Company"] != spec["company"]]
+    for c, eml in zip(spec["contacts"], emls):
+        rows.append({"Company": spec["company"], "Rank": c["rank"], "Contact": c["name"],
+                     "To": c["email"], "Cc": CC, "Subject": SUBJECT,
+                     "HtmlBody": eml.split("\n\n", 1)[1]})
+    rows.sort(key=lambda r: (r["Company"], int(r["Rank"])))
+    with open(path, "w", newline="") as f:
+        w = csv.DictWriter(f, fieldnames=SEND_COLUMNS)
+        w.writeheader()
+        w.writerows(rows)
+    return path
+
+
 def main(spec_path):
     spec = json.load(open(spec_path))
     outdir = os.path.join(DRAFTS_ROOT, spec.get("batch", spec["date"]))
     os.makedirs(outdir, exist_ok=True)
+    emls = []
     for c in spec["contacts"]:
+        eml = build_eml(c["email"], c["salutation"], spec["short"], spec["insight"])
+        emls.append(eml)
         path = os.path.join(outdir, f"{spec['slug']}-{c['file']}")
         with open(path, "w") as f:
-            f.write(build_eml(c["email"], c["salutation"], spec["short"], spec["insight"]))
+            f.write(eml)
+    write_send_batch(outdir, spec, emls)
 
     rows = load_tracker()
     # replace this company's non-sent RANKED rows only; sent history and unranked
