@@ -1,0 +1,6 @@
+{"company":"DrinkPAK, LLC","short":"DrinkPAK","slug":"drinkpak","date":"2026-07-28","batch":"2026-07-28",
+"insight":"you run nine high-speed lines filling everything from energy drinks to spirits and wine, and a third plant opens in Philadelphia in 2027",
+"proof":"[proof: drinkpak.com homepage - 9 high-speed lines, 5 billion cans annually, CA and TX facilities, 'Coming to Philadelphia, PA Early 2027']",
+"contacts":[
+{"rank":1,"name":"Ben Rush","title":"Chief Technology Officer and Founder","salutation":"Dear Ben Rush,","email":"ben@drink-pak.com","file":"1-rush.eml","basis":"verbatim in D&B export","check":"verbatim address on drink-pak.com domain","notes":"Founder/CTO - note company uses two domains, drinkpak.com and drink-pak.com"},
+{"rank":2,"name":"Brian Aster","title":"Chief Financial Officer","salutation":"Dear Brian Aster,","email":"brian.aster@drinkpak.com","file":"2-aster.eml","basis":"verbatim in D&B export","check":"verbatim address on drinkpak.com domain","notes":"Different domain from rank 1 - both verbatim, neither derived"}]}

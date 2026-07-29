@@ -38,7 +38,7 @@ Spec format:
 import csv, json, os, sys
 
 FROM = '"Mishra, Aman" <amishra@mba2027.hbs.edu>'
-CC = None  # optional second sender/classmate address; header omitted while unset
+CC = '"Kumar, Adarsh" <adakumar@mba2027.hbs.edu>'  # Adarsh copied on every send
 SUBJECT = "Harvard Business School research - contract manufacturing operations"
 TRACKER = os.path.join("contract-manufacturing", "outreach-tracker.csv")
 DRAFTS_ROOT = os.path.join("contract-manufacturing", "outreach-drafts")

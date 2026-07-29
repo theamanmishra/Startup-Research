@@ -1,0 +1,6 @@
+{"company":"Carolina Foods, LLC","short":"Carolina Foods","slug":"carolinafoods","date":"2026-07-28","batch":"2026-07-28",
+"insight":"you bake your own Duchess brand alongside private brands for other companies, so recipes running on the same lines belong to different owners",
+"proof":"[proof: carolinafoodsinc.com - 'Duchess' and 'Private Brands' both in main navigation; since 1934, Charlotte NC]",
+"contacts":[
+{"rank":1,"name":"Rebecca Babyak","title":"Head of Technical Services","salutation":"Dear Rebecca Babyak,","email":"rbabyak@carolinafoodsinc.com","file":"1-babyak.eml","basis":"verbatim in D&B export","check":"verbatim address, not derived","notes":"Technical services - closest persona to the documentation thesis"},
+{"rank":2,"name":"Stuart Smith","title":"Chief Operations Officer","salutation":"Dear Stuart Smith,","email":"ssmith@carolinafoodsinc.com","file":"2-smith.eml","basis":"verbatim in D&B export","check":"verbatim address, not derived","notes":""}]}

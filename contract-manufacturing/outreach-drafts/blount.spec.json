@@ -1,0 +1,4 @@
+{"company":"Blount Fine Foods Corp.","short":"Blount","slug":"blount","date":"2026-07-28","batch":"2026-07-28",
+"insight":"you make products for other companies' brands in the same plants where you run Blount's Family Kitchen and the Clam Shack line, so the recipes in one building answer to several different owners",
+"proof":"[proof: blountfinefoods.com/about-us 'making high quality products for some of your favorite brands' + own-brand pages; Fall River MA, Warren RI, TX]",
+"contacts":[{"rank":1,"name":"Bob Sewall","title":"Executive Vice President, Sales & Marketing","salutation":"Dear Bob Sewall,","email":"bsewall@blountfinefoods.com","file":"1-sewall.eml","basis":"verbatim published (foodservice contact listing)","check":"FLAGGED - single verbatim address; LeadIQ reports {f}{last}@ 96% but aggregator only","notes":"Pattern NOT double-confirmed. Send bounce-test in parallel."}]}

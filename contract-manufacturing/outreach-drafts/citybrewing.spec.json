@@ -1,0 +1,6 @@
+{"company":"City Brewing Company, LLC","short":"CITY","slug":"citybrewing","date":"2026-07-28","batch":"2026-07-28",
+"insight":"you co-pack hard seltzer, beer, spirit-based RTDs and non-alcoholic brands across four plants, so one customer's specification has to hold in La Crosse and Irwindale alike",
+"proof":"[proof: citybrewery.com homepage - 'largest full-service co-manufacturer in the United States', four facilities La Crosse WI, Memphis TN, Latrobe PA, Irwindale CA]",
+"contacts":[
+{"rank":1,"name":"Ross Sannes","title":"Chief Executive Officer","salutation":"Dear Ross Sannes,","email":"rsannes@citybrewery.com","file":"1-sannes.eml","basis":"verbatim in D&B export","check":"pattern {f}{last}@ confirmed by 3 agreeing addresses","notes":""},
+{"rank":2,"name":"Eric Ensminger","title":"Chief Information Officer","salutation":"Dear Eric Ensminger,","email":"eensminger@citybrewery.com","file":"2-ensminger.eml","basis":"verbatim in D&B export","check":"pattern confirmed","notes":"CIO - systems owner, good fit for documentation thesis"}]}
