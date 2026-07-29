@@ -16,7 +16,7 @@ Per company the output is: up to eight double-confirmed contacts ranked 1–8, o
 
 ## The approach (why these targets, this frame)
 
-An HBS student studying how contract food manufacturers run their operations and where AI helps. The reader is an owner, president, COO, plant manager, or quality director at a private, family- or PE-owned co-manufacturer or co-packer. Reply rate is the goal. Public companies route inbound through IR — skip them. Research asks reply at 15–40%; anything that smells like a vendor pitch halves it. The email names one industry issue (customer forecasts move, and the plant absorbs the idle line and the extra changeover) with "Among the issues…" so the reader is not boxed in and can bring their own problem to the call.
+An HBS student studying how contract food manufacturers run their operations and where AI helps. The reader is an owner, president, COO, plant manager, or quality director at a private, family- or PE-owned co-manufacturer or co-packer. Reply rate is the goal. Public companies route inbound through IR — skip them. Research asks reply at 15–40%; anything that smells like a vendor pitch halves it. The email names one industry issue (the manual work behind customer documentation and what a single error costs) with "Among the issues…" so the reader is not boxed in and can bring their own problem to the call.
 
 The credibility line is short by Aman's choice: recent work at frontier AI startups, written jointly with Adarsh. The frozen body carries no ITC history. If reply rates disappoint, adding one operating line is the first thing to test.
 
@@ -25,7 +25,8 @@ The credibility line is short by Aman's choice: recent work at frontier AI start
 - `contract-manufacturing/outreach-tracker.csv` — the live status board. The script replaces a company's non-sent ranked rows and appends the new set; sent history is never touched. Ranks 1–5 = send list; 6–8 = bench, used only when a higher rank bounces.
 - `contract-manufacturing/cm-companies.csv` — the ranked company universe (1,155 rows). Columns include `target_tier` (A verified co-man / B likely / C unknown), revenue, plant location, website, up to three contacts with titles/emails/phones, and `source_urls` for Tier A rows. Use it to pick companies and domains. **Treat its contact rows as leads, not facts** — they come from a D&B export and public sweeps, and every person must still pass step 3.
 - Drafts: one flat folder per batch — `contract-manufacturing/outreach-drafts/<batch-date>/<slug>-<rank>-<lastname>.eml`. Spec JSONs live at `contract-manufacturing/outreach-drafts/<slug>.spec.json`.
-- **No signature in drafts.** Outlook auto-appends it on send; a signature in the body appears twice.
+- `send-batch.csv` in each batch folder — the same messages as one table, written by the script. Consumed by `send_drafts.ps1` (Windows + Outlook desktop) so a 50-message batch becomes one command instead of 50 double-clicks. It saves to Drafts by default and only sends with `-Send`; it writes `send-log.csv` next to it, which is what updates the tracker's `Sent?` and `Sent date`.
+- **No signature in drafts.** Outlook auto-appends it on send; a signature in the body appears twice. `send_drafts.ps1` reads the signature off a fresh item and re-attaches it below the body, since assigning `HTMLBody` would otherwise wipe it.
 
 ## Orchestration — divide and conquer
 
@@ -54,16 +55,39 @@ Note: `cm-companies.csv` already carries real addresses for 139 companies, lifte
 
 **2. Roster, top-down.** 10–12 candidates so eight survive: Owner/President/CEO, family owners in leadership, COO/CFO, VP Operations, Plant Manager, then Director of Quality / Food Safety / FSQA, Director of Sales or Business Development (the person who fields co-pack inquiries), R&D or Product Development. Each with exact title, source URL, date of most recent in-role signal.
 
-**3. Double-check every person.** Two independent signals the person holds the role NOW, the fresher the better. Kill signals: an aggregator profile showing a NEW employer, "former"/"ex-", retirement coverage, an obituary. Co-mans change hands often, so also check for an acquisition that replaced leadership — our own sweep found several 2025–26 ownership changes. Run the name search (`"<first> <last>" <company>`) and read the top 5–10 results. Same pass captures: (a) **salutation** — a published source using he/she for the person; never infer from a name; no source = `Dear <First> <Last>,`; shared family surnames = `Dear <First>,`; (b) **the current title verbatim**. Single-source people get flagged and preferably benched or replaced. Off-thesis roles (HR, marketing) are excluded even when senior — log the exclusion.
+**3. Double-check every person.** Two independent signals the person holds the role NOW, the fresher the better. Kill signals: an aggregator profile showing a NEW employer, "former"/"ex-", retirement coverage, an obituary. Co-mans change hands often, so also check for an acquisition that replaced leadership — our own sweep found several 2025–26 ownership changes. Run the name search (`"<first> <last>" <company>`) and read the top 5–10 results. Same pass captures: (a) **salutation**, see below; (b) **the current title verbatim**.
+
+**Salutation.** Default is `Dear Mr. <Last>,` / `Dear Ms. <Last>,` — a courtesy title reads as a person who did the work, a bare full name reads as a mailmerge. The title must come from a **published source that states it**: the person's own bio using he/him or she/her, a press release calling them "Mr. X", an interview, an association profile. **Never infer a courtesy title from a first name** — a wrong one is worse than none, and this pipeline does not guess gender. When no source states it, fall back to `Dear <First>,`. Shared family surnames also take `Dear <First>,`. `Dear <First> <Last>,` is rejected by the script. Record the basis in the tracker Notes, e.g. `salutation: Ms. per company bio "she joined in 2019"`. Single-source people get flagged and preferably benched or replaced. Off-thesis roles (HR, marketing) are excluded even when senior — log the exclusion.
 
 **4. Pick eight, rank 1–8.** Top-down by seniority, ties broken by thesis fit: the operations owner ranks high because the frozen body's industry issue is planning and capacity, then quality/FSQA, then the co-pack sales contact, then finance (chargebacks and yield true-ups are their pain), then non-operating family. At a 40-person family co-man there may only be three or four real contacts — send fewer rather than padding with irrelevant names. Ranks below the real roster are left empty, not filled.
 
-**5. The insight — one clause, five gates.** The clause completes the frozen carrier "During my research, I read that at [Company], …". Dig at artifact level (certification directories, capabilities pages, customer/brand lists, plant lists, press releases, acquisition history); write at company level. Gates, in order:
-1. **Marries the industry issue** — it is the forecast/capacity problem showing up at this company, so the reader connects it to the previous sentence without help. Good raw material: many customers on shared lines, allergen segregation, seasonal or promotional demand, short runs, recent capacity expansion, customer-owned materials held at the plant.
-2. **Confirmed within the company** — the company's own artifact (its capabilities page, its certification listing) is strongest; a verified multi-source third-party record is acceptable; single-source is not. If neither exists, the company is not ready for the batch.
-3. **Painful at senior-management altitude** — a P&L sentence (margin at risk, capacity lost to non-production work, knowledge living in one person's head), not a website observation.
+**5. The insight — a named pain, not a fact.** The clause sits inside the frozen carrier:
+
+> In **[Company]**'s case, **[insight]**, and we would want to know how much of that is still manual today.
+
+So the clause has a **required two-part shape**, and the script enforces the join word:
+
+> **`<fact we found, in their words> so <the documentation pain it implies>`**
+
+The first half proves we looked at them. The second half is the whole point: it names a specific piece of paperwork we think is painful, and the carrier's closing question turns that into a hypothesis we are asking them to confirm or correct. Both halves are needed. A fact alone ("you run four plants") is a website observation and reads disconnected — **this was the failure of the first 15 emails, 2026-07-29**. A pain alone is a cold generic claim.
+
+The second half must name a **document, spec, questionnaire, audit record or approval** — not capacity, not changeovers. The frozen body's industry issue is documentation, and the two sentences have to be about the same thing.
+
+Gates, in order:
+1. **Two-part shape.** Fact `so` consequence. The consequence names a specific document artifact and a repeated action on it (rebuilt, re-entered, chased, reconciled, kept current in N places).
+2. **Fact confirmed within the company** — its own capabilities page, brand list, plant list, certification listing or press release is strongest; a verified multi-source third-party record is acceptable; single-source is not. If neither exists, the company is not ready for the batch. The *consequence* half is our inference and does not need a source, because the carrier asks rather than asserts — but it must follow from the fact a reader would recognise, not from a generic industry story.
+3. **Painful at senior-management altitude** — hours of skilled time, a launch that slips, an audit finding, an error with a customer's name on it. Not "you have many SKUs".
 4–5. **Invoke the `outreach-style` skill** on the clause — it returns the corrected clause.
-Worked example: "you co-pack sauces and jams for small brands in the same plant where you make your own line, so every customer's run competes for the same kettle" — company-level, verifiable from the company's own site, and it sets up the capacity issue without stating it. Same clause for all contacts at that company; personalization is per-company, never per-individual.
+
+Worked examples, both halves marked:
+
+| Company | Fact | `so` consequence |
+|---|---|---|
+| City Brewing | you co-pack seltzer, beer and RTDs across four plants | one customer's specification has to be kept current in four separate sets of paperwork |
+| Carolina Foods | you bake your own Duchess line alongside private brands on the same equipment | a single recipe change has to be written up twice, once your way and once the brand owner's |
+| Blount | you run other companies' brands in the plants where you make Blount's Family Kitchen | the audit evidence for one line has to be reshaped for whichever owner is asking |
+
+Same clause for all contacts at that company; personalization is per-company, never per-individual.
 
 **6. Assemble by script.** Write the spec JSON (format in the script docstring), then from the project root run:
 `python3 .claude/skills/outreach/outreach_build.py contract-manufacturing/outreach-drafts/<slug>.spec.json`
