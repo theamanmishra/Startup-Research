@@ -193,3 +193,38 @@ Ranked by evidence strength, not by size of prize:
 
 Dropped: **Task 3** (COA checking, measured at 20 seconds per document) and **Task 5** demoted
 (the constraint is lab capacity and hold time, not clerical work).
+
+---
+
+# Outreach method finding (2026-07-28) — food co-mans do not publish personal emails
+
+Research agent covered 6 verified co-mans (Kettle Cuisine, Berner, Tulkoff, Wixon, Palmer Candy,
+Anthony-Thomas), crawling 1,700+ pages and 58 company PDFs.
+
+**Result: zero of six publish a double-confirmable personal email pattern.** Five publish only role
+inboxes (`info@`, `sales@`, `customerservice@`, `appointments@`, `hiring@`). One (Wixon) yielded a
+single personal specimen, `murray_wright@wixon.com`, from an undated association directory.
+
+The agent's conclusion, which matches the evidence: this is a **property of the segment**, not a
+search failure. Private, family-held and PE-held co-mans route all contact through a form or a
+general inbox. Media contacts in their press releases are outside PR agencies.
+
+**Consequence for the pipeline.** Adarsh's OEM design assumes a confirmable pattern, then derives
+addresses for a ranked roster. That step works for equipment makers, who publish parts, dealer and
+service contacts. **It does not work here.** Deriving addresses at scale for food co-mans is not
+available from public sources.
+
+**What public research DOES yield reliably: names and titles.** The same pass produced current,
+company-sourced leadership including exactly the right personas —
+- **Rich Ellefson, VP of Food Safety & Quality, Palmer Candy** (live company page)
+- **Sara Sarnstrom, Director of Regulatory Affairs, Wixon** (company PDF, Mar 2026)
+- **Mike Kagan, CEO, Tulkoff** (company release, Feb 2025)
+
+**Revised approach:** names from web research, addresses from **Mergent Intellect** (D&B data,
+unmetered under HBS access, confirmed working by Aman on 2026-07-28). Role inboxes are the
+fallback where Mergent has nothing.
+
+**Also recorded:** leadership evidence is stale (pre-2024) at Kettle Cuisine, Berner and
+Anthony-Thomas, and both Kettle Cuisine and Berner changed ownership after their last published
+leadership news, so titles are likely to have drifted. Kettle Cuisine's own site is Cloudflare-blocked
+and was not reconstructed from lead-broker data (CLAUDE.md rule 8).
