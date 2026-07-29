@@ -228,3 +228,33 @@ fallback where Mergent has nothing.
 Anthony-Thomas, and both Kettle Cuisine and Berner changed ownership after their last published
 leadership news, so titles are likely to have drifted. Kettle Cuisine's own site is Cloudflare-blocked
 and was not reconstructed from lead-broker data (CLAUDE.md rule 8).
+
+## Outreach research update (2026-07-29) — the FMCSA route
+
+Batches B and C found what batch A did not: **the FMCSA motor-carrier census
+(`data.transportation.gov/resource/az4n-8mr2.json`) publishes registrant emails and company
+officers** for any food company that runs its own trucks. This is a verbatim, government-published
+source and it broke the deadlock. Also productive: WordPress REST API endpoints
+(`/wp-json/wp/v2/pages`), which expose contact blocks hidden on the rendered page.
+
+**Patterns double-confirmed (2+ verbatim addresses):** Lyons Magnus `{f}{last}@lyonsmagnus.com` ·
+Stremicks Heritage `{first}{last}@heritage-foods.com` · Cedarlane `{f}{last}@cedarlanefoods.com` ·
+Adirondack `{f}{last}@adkbev.com` · Vanee `{first}{last}@vaneefoods.com` · Organic Milling
+`{f}{last}@organicmilling.com` (but evidence is 2010–2016 and the company was acquired in 2022).
+
+**Domain traps found — sending to the website domain would bounce:** Vanee's mail is
+**vaneefoods.com** not vanee.com · Adirondack's is **adkbev.com** not adirondackbeverages.com ·
+Georgia Nut's is **georgianut.com** not georgianutcorp.com · Berner's is **bernerfoods.com**.
+
+**Site bugs worth knowing:** Wolfgang and Lakeside both publish addresses with a stray "www."
+inserted (`info@www.wolfgangco.com`), a migration artifact. Wolfgang's legacy domain
+wolfgangcandy.com is compromised and serving gambling spam; do not source from it.
+
+**Best personas found, no address yet (Mergent targets):** Rich Ellefson, VP Food Safety & Quality,
+Palmer Candy · Dulce Guzman, Director of QA and Arturo Guerrero, Director of Operations, Georgia Nut ·
+Lesli Kunkle, Director FSQA and Gary Shortt, VP Operations, Wolfgang · Sara Sarnstrom, Director of
+Regulatory Affairs, Wixon.
+
+**Companies that yielded nothing usable:** Union Beverage Packers (no named person anywhere, only
+`sales@`), Lief Labs (genuine null result on pattern; two aggregators contradict each other),
+Kettle Cuisine (site Cloudflare-blocked, leadership evidence 2017–2020 and ownership has changed).

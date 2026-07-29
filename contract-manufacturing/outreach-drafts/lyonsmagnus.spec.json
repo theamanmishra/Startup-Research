@@ -1,0 +1,6 @@
+{"company":"Lyons Magnus, LLC","short":"Lyons Magnus","slug":"lyonsmagnus","date":"2026-07-29","batch":"2026-07-29",
+"insight":"you run four manufacturing plants and two of your own distribution hubs, making Lyons syrups and Phillips sauces alongside custom formulations for coffeehouse and healthcare customers",
+"proof":"[proof: lyonsmagnus.com Truelink Capital acquisition release 20 Jul 2026 - 'four manufacturing facilities and two self-operated distribution hubs'; lyonsmagnus.com/co-manufacturing]",
+"contacts":[
+{"rank":1,"name":"Jim Davis","title":"Chief Executive Officer","salutation":"Dear Jim Davis,","email":"jdavis@lyonsmagnus.com","file":"1-davis.eml","basis":"derived from confirmed pattern {f}{last}@ (RHALL@ via FMCSA 2026-07-02, lrendon@ via NCIFT PDF)","check":"CURRENT - named CEO in company release 20 Jul 2026","notes":"Company acquired by Truelink Capital 9 days before drafting. Derived address, not verbatim."},
+{"rank":2,"name":"Peter Begg","title":"Chief Quality and Food Safety Officer","salutation":"Dear Peter Begg,","email":"pbegg@lyonsmagnus.com","file":"2-begg.eml","basis":"derived from confirmed pattern {f}{last}@","check":"FLAGGED - placement announcement undated, no post-2024 confirmation he still holds the role","notes":"Best persona if still in seat. Verify before sending."}]}
