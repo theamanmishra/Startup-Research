@@ -137,3 +137,71 @@ So start at audit documentation and questionnaires, earn trust, and only then to
 | ERPs (SAP, NetSuite, Infor, Plex, Doss) | System of record | **[E]** "consistently fail to address the highly specific requirements of process manufacturing and recipe-driven production" |
 
 Resolving this table is the last desk task before interviews.
+
+---
+
+# Competitor scan (2026-07-28) — who already sells into this
+
+Method: fetched each vendor's own site, plus funding/pricing search. Company self-descriptions are
+marketing claims, not audited facts.
+
+## SafetyChain — the incumbent to beat
+
+- **Self-description:** "#1 Digital Plant Management Platform for Food & Beverage… trusted in **2,500+ manufacturing facilities** to digitize quality, streamline compliance, and power plant-wide processes." (safetychain.com)
+- **Its marketing names our exact problem:** "Whether you're relying on **paper and pens, homegrown tools, or a clunky ERP system**…"; "**Always Audit Ready. Stop scrambling**"; "Replace **outdated spreadsheets** with real-time data"; "speed up pre-shipment reviews."
+- **Funding:** ~$50M growth equity, Oct 2021 (CB Insights via search).
+- **Pricing:** facility-based subscription, unlimited users; no public price at higher tiers.
+- **Known weakness, from a user:** **[E]** Project Specialist, MaryAnn's Baking Co. (expert call, 9 May 2024): "valued for its ability to centralize documentation and provide auditor-specific access, but **criticized for being laggy and lacking an automated scheduling system**."
+
+**Read:** the audit-documentation wedge is occupied, at scale, by a funded incumbent whose
+homepage attacks spreadsheets by name. This materially weakens wedge #1 from the earlier ranking.
+
+## Specright — occupies the specification layer
+
+- **Self-description:** "#1 Platform for Specification Management"; modules for Packaging Management, **Product Data Management** ("raw materials, ingredients, formulas, recipes, and finished goods"), **Supplier Collaboration**, Project Management ("quickly build BOMs, forecast costs"), and an **R&D Workbench** with "AI-driven formulation tools."
+- Sells into Food & Beverage among other industries; markets a "Spec-First AI Platform," an "AI Assistant," and "AI-Native Formulation."
+- **[E]** Bob Evans Farms CIO is a public customer reference.
+
+**Read:** spec intake, BOM building, and supplier collaboration are all explicitly in their
+product. They are further ahead on this thesis than the earlier arena map assumed.
+
+## Trustwell (FoodLogiQ + Genesis) — the compliance and labeling stack
+
+- Covers "formulation and labeling to traceability and recall management." Named use cases include **"Manage Food Specifications," "Make Compliant Labels," "Comply with Regulations," "Manage Quality."**
+- Markets "Trustwell AI" and **AskReg**, "your AI Expert for navigating the complexities of regulations in nutritional labeling."
+- Industry pages include **Food Manufacturers + CPG** and **Supplement Manufacturers**.
+
+## FoodReady — software plus consultants, priced for the small end
+
+- Food safety, quality and traceability software **bundled with GFSI/HACCP/SQF/BRC consulting**.
+- **Funding:** $4M seed, Sep 2023, ~$16M pre-money (search).
+- **Pricing (secondary source):** **$1,500–$5,000/month** including consultant time (qtraca.com pricing guide) `[UNVERIFIED — vendor comparison site, not FoodReady's own page; their pricing page lists no figures]`.
+
+**Read:** this is the first real ACV datapoint for the segment: roughly **$18k–60k per year**,
+consistent with the earlier estimate that this is a low-tens-of-thousands product, not enterprise.
+
+## Revised competitive picture
+
+| Layer | Occupied by | Strength |
+|---|---|---|
+| Audit / compliance documentation | **SafetyChain** (2,500+ facilities, $50M), FoodReady (SMB + consulting) | **Strong.** Directly attacks spreadsheets. |
+| Specification and BOM management | **Specright** (AI assistant, formulation, supplier collaboration) | **Strong**, though apparently brand-first. |
+| Labeling and regulatory | **Trustwell** (AskReg AI) | Strong |
+| Plant productivity | Redzone | Adjacent |
+| ERP / system of record | SAP, NetSuite, Infor, Plex, Doss | **[E]** "consistently fail… recipe-driven production" |
+
+## Honest consequence for the thesis
+
+The earlier wedge ranking put **audit documentation first because it was best evidenced**. That
+ranking did not account for competition. Corrected: audit documentation is the **most crowded**
+cell, defended by a $50M-funded incumbent in 2,500+ facilities.
+
+What remains genuinely unclaimed is narrower and rests on the asymmetry hypothesis: **not
+managing the plant's own documents, but absorbing the inbound variety of many brand customers'
+differing formats, questionnaires, and portals.** Every incumbent above organises the plant's own
+data. None was found selling "we take whatever your twenty customers send and turn it into your
+one internal standard."
+
+That distinction is now the whole thesis. It is **[H]**, not **[E]**, and it is exactly what the
+first interviews must confirm or kill. If a plant's answer is "SafetyChain already handles it,"
+the dive should stop and re-aim.
