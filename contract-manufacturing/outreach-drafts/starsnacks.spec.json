@@ -1,0 +1,14 @@
+{
+  "company": "Star Snacks Co., LLC",
+  "short": "Star Snacks",
+  "slug": "starsnacks",
+  "date": "2026-07-30",
+  "batch": "2026-07-30",
+  "insight": "you run your own Star Snacks, Imperial Nuts and Platinum brands on the same lines you private label for retailers and drug chains so one line answers to your own brand standard and to every retailer's separate spec",
+  "proof": "[proof: starsnacks.net/about-us 'We also produce our own product lines that includes Star Snacks, Imperial Nuts and Platinum'; starsnacks.net/products-and-services 'private labeling for brand name retailers, national and regional drug store chains, supermarkets and deep discounters'; starsnacks.net/facilities SQF 2000 Level 2. Verified by direct fetch 2026-07-30]",
+  "contacts": [
+    {"rank":1,"name":"Eddie Engelman","title":"Director of Food Safety & Quality","salutation":"Dear Eddie,","email":"eddie@starsnacks.net","file":"1-eengelman.eml","basis":"verbatim in D&B export; pattern {first}@ independently confirmed by rafie@ on FMCSA filing 2025-04-04","check":"FLAGGED - role signal is undated (D&B export + aggregator). No contrary signal found","notes":"Best thesis persona. No published pronoun source for anyone at this company, so first-name salutation"},
+    {"rank":2,"name":"Rafie Miller","title":"Company officer of record; CFO per aggregators","salutation":"Dear Rafie,","email":"rafie@starsnacks.net","file":"2-rmiller.eml","basis":"verbatim published, FMCSA DOT census, officer RAFIE MILLER, mcs150 2025-04-04","check":"CURRENT - dated government filing 2025-04-04","notes":"Only dated in-role signal at this company. Title beyond 'company officer' is aggregator-only"},
+    {"rank":3,"name":"Joey Weinreich","title":"Vice President, Sales","salutation":"Dear Joey,","email":"joey@starsnacks.net","file":"3-jweinreich.eml","basis":"verbatim in D&B export; matches confirmed {first}@ pattern","check":"FLAGGED - role signal undated (D&B export + aggregator)","notes":"Fields private label inquiries; company also publishes privatelabel@starsnacks.net as the co-pack inbox"}
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "company": "Chelten House Products, LLC",
+  "short": "Chelten House",
+  "slug": "cheltenhouse",
+  "date": "2026-07-30",
+  "batch": "2026-07-30",
+  "insight": "you have developed thousands of products for private label retailers across nine lines under one SQF Level 3 system so each retailer's formula carries its own spec sheet and its own audit answer",
+  "proof": "[proof: cheltenhouse.com/co-manufacturing 'nine full-scale production lines in our New Jersey facility and more than 500,000 square feet'; cheltenhouse.com/private-label-2 'we've developed thousands of products across dozens of categories, helping private label retailers'; cheltenhouse.com/quality-assurance-and-food-safety 'SQF 2000 Level 3 Certified'. All three verified by direct fetch 2026-07-30]",
+  "contacts": [
+    {"rank":1,"name":"Jason Dabrow","title":"President & COO","salutation":"Dear Mr. Dabrow,","email":"jdabrow@cheltenhouse.com","file":"1-jdabrow.eml","basis":"derived from double-confirmed pattern {f}{last}@ (wbailey@ via FMCSA DOT filing; treed@ via NJMEP manufacturer directory)","check":"CURRENT - own bio cheltenhouse.com/our-team/jason-dabrow, page modified 2025-10-20; NJFPA podcast ep.9 names him President/COO","notes":"Operations owner, best thesis fit. Courtesy title from own bio: 'Jason started his career in the New Jersey plant'"},
+    {"rank":2,"name":"Steve Dabrow","title":"Chairman & CEO","salutation":"Dear Mr. Dabrow,","email":"sdabrow@cheltenhouse.com","file":"2-sdabrow.eml","basis":"derived from double-confirmed pattern {f}{last}@","check":"CURRENT - own bio cheltenhouse.com/our-team/steve-dabrow modified 2025-10-20; also named company officer on FMCSA filing","notes":"Courtesy title from own bio: 'Under his leadership, Chelten House expanded into organic manufacturing'"},
+    {"rank":3,"name":"David Elchynski","title":"VP Business Development","salutation":"Dear Mr. Elchynski,","email":"delchynski@cheltenhouse.com","file":"3-elchynski.eml","basis":"derived from double-confirmed pattern {f}{last}@","check":"CURRENT - own bio cheltenhouse.com/our-team/david-elchynski modified 2025-04-08","notes":"Fields co-pack and private label inquiries. Courtesy title: 'He has also worked for Daymon Worldwide'"},
+    {"rank":4,"name":"Ken Pawloski","title":"Chief Financial Officer","salutation":"Dear Mr. Pawloski,","email":"kpawloski@cheltenhouse.com","file":"4-pawloski.eml","basis":"derived from double-confirmed pattern {f}{last}@","check":"FLAGGED - own bio page dated 2025-03-10 is the only non-aggregator source","notes":"Courtesy title: 'He received his BS in Accounting from the University of Delaware'"},
+    {"rank":5,"name":"Joe Hoffman","title":"VP Environmental, Health & Safety","salutation":"Dear Mr. Hoffman,","email":"jhoffman@cheltenhouse.com","file":"5-hoffman.eml","basis":"derived from double-confirmed pattern {f}{last}@","check":"FLAGGED - own bio page is the only non-aggregator source","notes":"EHS owns part of the audit record. Courtesy title: 'He received his BA in Hospitality Management'"}
+  ]
+}

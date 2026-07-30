@@ -292,3 +292,48 @@ Bounce codes worth recognising:
 - `5.7.129` — restricted recipient. Address fine, person unreachable. Park.
 - `5.7.1` / `5.7.606` — sender or IP blocked. That is about us, not them; if it recurs
   across domains, the sending reputation is the problem.
+
+## Batch 3 yield evidence (2026-07-30) — what actually predicts a sendable address
+
+Twenty Tier A companies researched by five agents. **Four produced a confirmable email
+pattern. Sixteen did not.** That 20% is the real desk-research yield, and the split is not
+random.
+
+| Group | Companies | Sendable | What they had going in |
+|---|---|---|---|
+| 1 | Chelten House, Johanna, Star Snacks, Berner | 2 | verbatim addresses already in the D&B export |
+| 2 | Anthony-Thomas, Burke, Coating Place, Coloma | 0 | name only |
+| 3 | Best Formulations, ANS, Bakery Barn, CraftMark | 0 | name only |
+| 4 | Brooklyn Bottling, Country Pure, Calpack, Consolidated Mills | 0 | name only |
+| 5 | Cookies United, Craft Cannery, AZPACK, Bardstown | 2 | name only |
+
+**The finding: an email pattern is not something research discovers, it is something a
+company either publishes or does not.** Thirteen of the sixteen failures failed at the same
+step — exactly one published address, or only a general inbox. More search time would not
+have changed that. Craft Cannery is the instructive exception: a small owner-run co-packer
+publishes `Pauly@CraftCannery.com` on its contact page, because at that size the owner *is*
+the inbox. Bardstown only worked because a corporate restructuring created a new PR site
+with two named-contact addresses on it.
+
+Second-order findings from the same sweep:
+
+- **Mail domain ≠ web domain in 7 of 20 companies.** bernerfoods.com (site is
+  bernerfoodandbeverage.com, and bernerfoods.com serves no web at all), cmillsinc.com,
+  loftedspirits.com, iberiafood.com and nsbottle.com for Brooklyn Bottling, hppfs.com,
+  juice4u.com, and Cookies United's contact page whose visible text says
+  `info@cookiesunited.com` while the actual mailto targets `info@silverlakecookie.com`.
+  Always read the mailto target, never the link text.
+- **The D&B contact columns are dangerously stale.** Anthony-Thomas listed a CEO who died
+  in 2013. Berner listed a CEO whose family sold the company in 2015. Best Formulations and
+  ANS both listed CEOs who had moved on. Chelten House listed a VP whose bio page 404s.
+  Treat every D&B *name* as a lead needing a dated confirmation; the D&B *addresses* have
+  held up well, which is the opposite of what one would assume.
+- **Tier A is not clean.** Burke Corp is a Hormel subsidiary, AZPACK has been Refresco since
+  2019, Best Formulations is a Sirio Pharma subsidiary, Bakery Barn's plant closed in 2025.
+  Four of twenty were not independent co-manufacturers at all. The tiering pass checked what
+  a company said it did, never who owned it.
+
+**Consequence for the 50-a-day target.** Only 6 untouched Tier A and B rows still carry a
+verbatim address. Desk research converts name-only companies at roughly 1 in 8. So 50 a day
+is not reachable by adding search effort; it needs an address source — Mergent Intellect
+through HBS, or a paid finder API. Until then the honest daily ceiling is closer to ten.

@@ -1,0 +1,12 @@
+{
+  "company": "Craft Cannery",
+  "short": "Craft Cannery",
+  "slug": "craftcannery",
+  "date": "2026-07-30",
+  "batch": "2026-07-30",
+  "insight": "you take other people's recipes and run them on the same line as your own Guglielmo Sauce brand so every customer's recipe has to be turned into your paperwork before it can run",
+  "proof": "[proof: craftcannery.com/about 'Craft Cannery takes YOUR recipes and creates YOUR delicious and special products'; craftcannery.com/team - Paul Guglielmo owns Guglielmo Sauce, sold in 500+ stores, and is the facility's own SQF practitioner and PCQI; craftcannery.com/about FDA registered, USDA certified, SQF/GFSI certified]",
+  "contacts": [
+    {"rank":1,"name":"Paul Guglielmo","title":"Owner & CEO","salutation":"Dear Mr. Guglielmo,","email":"Pauly@CraftCannery.com","file":"1-guglielmo.eml","basis":"VERBATIM, not derived - craftcannery.com/contact publishes 'E-mail Our CEO Directly: Pauly@CraftCannery.com'","check":"CURRENT - active owner per Grow-NY coverage May 2025 and EPI judge bio Feb 2025","notes":"Courtesy title from own team page: 'Paul lives in Brighton, NY with his wife Ryann'. He is also the plant's own QA manager, so he is the buyer and the user. Do NOT use paul@guglielmosauce.com, that is his separate brand"}
+  ]
+}
