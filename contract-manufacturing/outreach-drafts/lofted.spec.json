@@ -1,0 +1,13 @@
+{
+  "company": "Bardstown Bourbon Company / Lofted Spirits",
+  "short": "Bardstown Bourbon",
+  "slug": "lofted",
+  "date": "2026-07-30",
+  "batch": "2026-07-30",
+  "insight": "you offer contract customers more than five hundred points of customization across more than fifty mash bills so every barrel run carries its own agreed specification that somebody has to write down and hold to for years",
+  "proof": "[proof: loftedspirits.com/contract-distilling 'more than 500 points of customization', 'more than 50 mash bills', named clients Five Trail, 15 Stars, Blue Run, Forbidden, 300-barrel minimum, Alternating Proprietorship program; bardstownbourbon.com/contract-distilling ISO 9001 + FSSC 22000, two distilleries]",
+  "contacts": [
+    {"rank":1,"name":"Peter Marino","title":"President, Bardstown Bourbon Co., Green River Distilling Co. and Lofted Spirits","salutation":"Dear Mr. Marino,","email":"pmarino@loftedspirits.com","file":"1-marino.eml","basis":"derived from double-confirmed pattern {f}{last}@ (wbrown@ and hweyler@ both published on loftedspirits.com via WP REST API)","check":"CURRENT - hired May 2024 (fredminnick.com 2024-05-10), still named President in Feb 2026 coverage","notes":"Courtesy title: 'where he led the company into non-alcohol beverages'. NOTE mail domain is loftedspirits.com, not bardstownbourbon.com"},
+    {"rank":2,"name":"Mark W. Erwin","title":"Chief Executive Officer, Lofted Spirits","salutation":"Dear Mr. Erwin,","email":"merwin@loftedspirits.com","file":"2-erwin.eml","basis":"derived from double-confirmed pattern {f}{last}@","check":"CURRENT - named Lofted CEO in Feb 2026 coverage; CEO of Bardstown Bourbon since Sep 2019","notes":"Courtesy title: 'Mr. Erwin served for 26 years in the United States Army' (capitalagroup.com bio). Pending litigation names him personally - see cm-companies.csv note"}
+  ]
+}

@@ -258,3 +258,82 @@ Regulatory Affairs, Wixon.
 **Companies that yielded nothing usable:** Union Beverage Packers (no named person anywhere, only
 `sales@`), Lief Labs (genuine null result on pattern; two aggregators contradict each other),
 Kettle Cuisine (site Cloudflare-blocked, leadership evidence 2017–2020 and ownership has changed).
+
+## Bounce evidence from batch 1 (2026-07-29) — 13 of 15 delivered
+
+Fifteen emails sent 29 Jul. Two bounced. They failed for opposite reasons and the
+distinction matters for how the pipeline treats an address.
+
+**`johnkuethe@vaneefoods.com` — DSN 5.7.129, "you don't have permission to send to it."**
+This is Exchange Online's *restricted recipient* refusal, not a bad address. The mailbox
+exists; it is configured to accept mail only from an approved sender list. Consequence:
+the address was correct and the research was correct, and the person is still unreachable
+by cold email. There is no retry, no alternate spelling, no pattern fix. Park the person,
+try a different persona at the same company. **Do not read a 5.7.129 as a failed
+derivation — it says nothing about the pattern.**
+
+**`pbegg@lyonsmagnus.com` — 5.1.1, "pbegg wasn't found at lyonsmagnus.com."**
+`jdavis@lyonsmagnus.com`, derived from the same `{f}{last}@` pattern, delivered the same
+day. So the pattern is confirmed correct and the *person* is gone. This row had already
+been flagged in the tracker: "placement announcement undated, no post-2024 confirmation he
+still holds the role." The flag was right and the draft should have been benched rather
+than sent. **Rule tightened: a contact whose most recent in-role signal cannot be dated
+after the last ownership change, or within ~18 months, is benched, not drafted** — Lyons
+Magnus had been acquired by Truelink Capital nine days before we wrote.
+
+Read across both: the email-pattern bar is doing its job (2 of 2 derived-from-confirmed
+addresses reached a live mailbox or a live-but-restricted one), and the weak link is
+**person recency**, not address construction. Spend the marginal research minute on
+"is this person still there" rather than on a third address confirmation.
+
+Bounce codes worth recognising:
+- `5.1.1` / "wasn't found at" — address wrong OR person gone. Check whether a sibling
+  address at the same domain delivered; if yes, the person is gone.
+- `5.7.129` — restricted recipient. Address fine, person unreachable. Park.
+- `5.7.1` / `5.7.606` — sender or IP blocked. That is about us, not them; if it recurs
+  across domains, the sending reputation is the problem.
+
+## Batch 3 yield evidence (2026-07-30) — what actually predicts a sendable address
+
+Twenty Tier A companies researched by five agents. **Four produced a confirmable email
+pattern. Sixteen did not.** That 20% is the real desk-research yield, and the split is not
+random.
+
+| Group | Companies | Sendable | What they had going in |
+|---|---|---|---|
+| 1 | Chelten House, Johanna, Star Snacks, Berner | 2 | verbatim addresses already in the D&B export |
+| 2 | Anthony-Thomas, Burke, Coating Place, Coloma | 0 | name only |
+| 3 | Best Formulations, ANS, Bakery Barn, CraftMark | 0 | name only |
+| 4 | Brooklyn Bottling, Country Pure, Calpack, Consolidated Mills | 0 | name only |
+| 5 | Cookies United, Craft Cannery, AZPACK, Bardstown | 2 | name only |
+
+**The finding: an email pattern is not something research discovers, it is something a
+company either publishes or does not.** Thirteen of the sixteen failures failed at the same
+step — exactly one published address, or only a general inbox. More search time would not
+have changed that. Craft Cannery is the instructive exception: a small owner-run co-packer
+publishes `Pauly@CraftCannery.com` on its contact page, because at that size the owner *is*
+the inbox. Bardstown only worked because a corporate restructuring created a new PR site
+with two named-contact addresses on it.
+
+Second-order findings from the same sweep:
+
+- **Mail domain ≠ web domain in 7 of 20 companies.** bernerfoods.com (site is
+  bernerfoodandbeverage.com, and bernerfoods.com serves no web at all), cmillsinc.com,
+  loftedspirits.com, iberiafood.com and nsbottle.com for Brooklyn Bottling, hppfs.com,
+  juice4u.com, and Cookies United's contact page whose visible text says
+  `info@cookiesunited.com` while the actual mailto targets `info@silverlakecookie.com`.
+  Always read the mailto target, never the link text.
+- **The D&B contact columns are dangerously stale.** Anthony-Thomas listed a CEO who died
+  in 2013. Berner listed a CEO whose family sold the company in 2015. Best Formulations and
+  ANS both listed CEOs who had moved on. Chelten House listed a VP whose bio page 404s.
+  Treat every D&B *name* as a lead needing a dated confirmation; the D&B *addresses* have
+  held up well, which is the opposite of what one would assume.
+- **Tier A is not clean.** Burke Corp is a Hormel subsidiary, AZPACK has been Refresco since
+  2019, Best Formulations is a Sirio Pharma subsidiary, Bakery Barn's plant closed in 2025.
+  Four of twenty were not independent co-manufacturers at all. The tiering pass checked what
+  a company said it did, never who owned it.
+
+**Consequence for the 50-a-day target.** Only 6 untouched Tier A and B rows still carry a
+verbatim address. Desk research converts name-only companies at roughly 1 in 8. So 50 a day
+is not reachable by adding search effort; it needs an address source — Mergent Intellect
+through HBS, or a paid finder API. Until then the honest daily ceiling is closer to ten.
