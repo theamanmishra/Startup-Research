@@ -258,3 +258,37 @@ Regulatory Affairs, Wixon.
 **Companies that yielded nothing usable:** Union Beverage Packers (no named person anywhere, only
 `sales@`), Lief Labs (genuine null result on pattern; two aggregators contradict each other),
 Kettle Cuisine (site Cloudflare-blocked, leadership evidence 2017–2020 and ownership has changed).
+
+## Bounce evidence from batch 1 (2026-07-29) — 13 of 15 delivered
+
+Fifteen emails sent 29 Jul. Two bounced. They failed for opposite reasons and the
+distinction matters for how the pipeline treats an address.
+
+**`johnkuethe@vaneefoods.com` — DSN 5.7.129, "you don't have permission to send to it."**
+This is Exchange Online's *restricted recipient* refusal, not a bad address. The mailbox
+exists; it is configured to accept mail only from an approved sender list. Consequence:
+the address was correct and the research was correct, and the person is still unreachable
+by cold email. There is no retry, no alternate spelling, no pattern fix. Park the person,
+try a different persona at the same company. **Do not read a 5.7.129 as a failed
+derivation — it says nothing about the pattern.**
+
+**`pbegg@lyonsmagnus.com` — 5.1.1, "pbegg wasn't found at lyonsmagnus.com."**
+`jdavis@lyonsmagnus.com`, derived from the same `{f}{last}@` pattern, delivered the same
+day. So the pattern is confirmed correct and the *person* is gone. This row had already
+been flagged in the tracker: "placement announcement undated, no post-2024 confirmation he
+still holds the role." The flag was right and the draft should have been benched rather
+than sent. **Rule tightened: a contact whose most recent in-role signal cannot be dated
+after the last ownership change, or within ~18 months, is benched, not drafted** — Lyons
+Magnus had been acquired by Truelink Capital nine days before we wrote.
+
+Read across both: the email-pattern bar is doing its job (2 of 2 derived-from-confirmed
+addresses reached a live mailbox or a live-but-restricted one), and the weak link is
+**person recency**, not address construction. Spend the marginal research minute on
+"is this person still there" rather than on a third address confirmation.
+
+Bounce codes worth recognising:
+- `5.1.1` / "wasn't found at" — address wrong OR person gone. Check whether a sibling
+  address at the same domain delivered; if yes, the person is gone.
+- `5.7.129` — restricted recipient. Address fine, person unreachable. Park.
+- `5.7.1` / `5.7.606` — sender or IP blocked. That is about us, not them; if it recurs
+  across domains, the sending reputation is the problem.
