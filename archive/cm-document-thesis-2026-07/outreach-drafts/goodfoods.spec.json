@@ -1,0 +1,26 @@
+{
+  "company": "Good Foods Group, LLC",
+  "short": "Good Foods Group",
+  "slug": "goodfoods",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you scale customers' custom formulas through plant trials under HPP, so the specification has to be rewritten at each step for the brand owner's own file",
+  "proof": "[proof: goodfoods.com/foodservice/custom-solutions/ \"Every custom project starts in our R&D kitchen, replicating plant processes for consistency through scale-up... we conduct plant trials and lock in a timeline for national launch\"; dual SQF Level 3 per goodfoods.com/foodservice/partnering-with-us/]",
+  "contacts": [
+    {"rank":1,"name":"Kurt Penn","title":"Founder & CEO","salutation":"Dear Kurt,",
+     "email":"kpenn@goodfoods.com","file":"1-penn.eml",
+     "basis":"derived from {f}{last}@ double-confirmed by jmcmahon@ and jlevin@ agreeing",
+     "check":"no kill signal. Own site names him: goodfoods.com/newsroom/in-the-media/2015-entrepreneur-of-the-year-kurt-penn-good-foods-group/ and goodfoodsfoodservice.com/faq/ \"Kurt Penn, the founder and CEO of Good Foods\"",
+     "notes":"salutation: no published source states a courtesy title or pronouns, first name per skill rule. DERIVED address - watch the bounce test, see the jvecchio@ failure at Rotella's on 2026-07-31."},
+    {"rank":2,"name":"Jackie Levin","title":"President & Chief Operating Officer","salutation":"Dear Jackie,",
+     "email":"jlevin@goodfoods.com","file":"2-levin.eml",
+     "basis":"verbatim published address (D&B export)",
+     "check":"no kill signal. theorg.com/org/good-foods-group/org-chart/jackie-levin; also a board director per perishablenews.com/produce/good-foods-establishes-board-of-directors/",
+     "notes":"salutation: no source, first name. Some sources list only the board-director role rather than President/COO; not a kill signal, but do not assert the title in conversation."},
+    {"rank":3,"name":"Jeff McMahon","title":"Chief Financial Officer","salutation":"Dear Jeff,",
+     "email":"jmcmahon@goodfoods.com","file":"3-mcmahon.eml",
+     "basis":"verbatim published address (D&B export)",
+     "check":"no kill signal. TITLE CONFLICT: LinkedIn reads President at Good Foods Group, TheOrg and ZoomInfo say CFO. Possible promotion, unresolved",
+     "notes":"salutation: no source, first name. Do not state his title back to him given the conflict."}
+  ]
+}

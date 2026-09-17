@@ -1,0 +1,44 @@
+{
+  "company": "Pure's Food Specialties, LLC",
+  "short": "Pure's",
+  "slug": "pures",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you run six production facilities that between them cover most pack formats in the cookie and cracker aisle, so one customer's specification has to be kept current across whichever plants are running it",
+  "proof": "[proof: puresfood.com/who-we-are/ \"Six state of the art production facilities\"; puresfood.com/what-we-offer/ \"Pure's can produce the vast majority of pack formats found in the cookie/cracker aisle\" and \"Our flexible packaging platform allows our contract manufacturing partners to access categories and markets\"]",
+  "contacts": [
+    {
+      "rank": 1,
+      "name": "Jonathan Pure",
+      "title": "President",
+      "salutation": "Dear Jonathan,",
+      "email": "jpure@puresfood.com",
+      "file": "1-pure.eml",
+      "basis": "derived from {f}{last}@ triple-confirmed by dsekalias@, mwhaley@ and dahlstrand@ (the last published on their own site)",
+      "check": "no kill signal. theorg.com/org/pures-food-specialties/org-chart/jonathan-pure lists him President",
+      "notes": "salutation: no source, first name. DERIVED address. Company publishes no leadership page and the site footer still reads 2021, so all titles rest on an undated third-party chart."
+    },
+    {
+      "rank": 2,
+      "name": "David Sekalias",
+      "title": "Chief Financial Officer",
+      "salutation": "Dear David,",
+      "email": "dsekalias@puresfood.com",
+      "file": "2-sekalias.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal. theorg.com/org/pures-food-specialties/org-chart/david-sekalias",
+      "notes": "salutation: no source, first name. PE-backed since 2016 (Concentric Equity Partners, Promus Equity Partners), so chargebacks and yield true-ups are live topics."
+    },
+    {
+      "rank": 3,
+      "name": "Mikell Whaley",
+      "title": "Executive Vice President",
+      "salutation": "Dear Mikell,",
+      "email": "mwhaley@puresfood.com",
+      "file": "3-whaley.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal. theorg.com/org/pures-food-specialties/org-chart/mikell-whaley",
+      "notes": "salutation: no source, first name."
+    }
+  ]
+}

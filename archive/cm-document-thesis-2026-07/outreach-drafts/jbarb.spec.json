@@ -1,0 +1,66 @@
+{
+  "company": "J & B Sausage Company, Inc. (J Bar B Foods)",
+  "short": "J Bar B",
+  "slug": "jbarb",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you built the first co-extrusion process for smoked sausage in the country, so a customer bringing its own formula onto that line needs the process written up in whatever format its own file expects",
+  "proof": "[proof: jbfoods.com/technology/ \"J Bar B Foods developed the nation's first co-extrusion process for smoked sausage\"; private label + co-pack per jbfoods.com/services/]",
+  "contacts": [
+    {
+      "rank": 1,
+      "name": "Danny Janecka II",
+      "title": "Chief Executive Officer",
+      "salutation": "Dear Mr. Janecka,",
+      "email": "djanecka@jbfoods.com",
+      "file": "1-janecka.eml",
+      "basis": "derived from {f}{last}@ agreeing across three published addresses. COLLISION RISK: his father Danny Janecka, Chairman, maps to the same local part",
+      "check": "no kill signal. Own site jbfoods.com/meet-the-team/ lists him CEO, live 2026-07-31",
+      "notes": "salutation: Mr. per provisioneronline.com/articles/101425-j-bar-b-foods-power-surge, he/him. COLLISION FLAG - if a reply comes from the Chairman rather than the CEO, that resolves which one holds djanecka@. Chairman deliberately not drafted for this reason."
+    },
+    {
+      "rank": 2,
+      "name": "Adam Bosl",
+      "title": "Chief Financial Officer",
+      "salutation": "Dear Adam,",
+      "email": "abosl@jbfoods.com",
+      "file": "2-bosl.eml",
+      "basis": "derived from {f}{last}@ agreeing across three published addresses",
+      "check": "no kill signal. Own site jbfoods.com/meet-the-team/ lists him CFO, live 2026-07-31",
+      "notes": "salutation: no source, first name."
+    },
+    {
+      "rank": 3,
+      "name": "Travis Holmes",
+      "title": "Vice President of Quality Assurance",
+      "salutation": "Dear Travis,",
+      "email": "tholmes@jbfoods.com",
+      "file": "3-holmes.eml",
+      "basis": "derived from {f}{last}@ agreeing across three published addresses",
+      "check": "no kill signal. Own site jbfoods.com/meet-the-team/ lists him VP Quality Assurance, live 2026-07-31",
+      "notes": "salutation: no source, first name. Strongest thesis fit here, the carrier is about documentation and audit evidence."
+    },
+    {
+      "rank": 4,
+      "name": "Brian Pirkle",
+      "title": "Vice President of Sales",
+      "salutation": "Dear Brian,",
+      "email": "bpirkle@jbfoods.com",
+      "file": "4-pirkle.eml",
+      "basis": "derived from {f}{last}@ agreeing across three published addresses",
+      "check": "no kill signal. Own site jbfoods.com/meet-the-team/ lists him VP Sales, live 2026-07-31",
+      "notes": "salutation: no source, first name."
+    },
+    {
+      "rank": 5,
+      "name": "Pete Beckwith",
+      "title": "Senior Vice President of Sales",
+      "salutation": "Dear Mr. Beckwith,",
+      "email": "pbeckwith@jbfoods.com",
+      "file": "5-beckwith.eml",
+      "basis": "derived from {f}{last}@ agreeing across three published addresses",
+      "check": "no kill signal. Own site jbfoods.com/meet-the-team/ live 2026-07-31; also quoted in provisioneronline.com/articles/101425-j-bar-b-foods-power-surge",
+      "notes": "salutation: Mr. per that article, he/him. Own-site title is SVP Sales and CMO; addressed on the sales half, marketing is off-thesis."
+    }
+  ]
+}

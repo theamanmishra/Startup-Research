@@ -56,3 +56,15 @@ Claude Code sessions have no memory of chats or of each other. Any learning that
 - Presenting inferred mechanisms as sourced facts.
 - Generic, situation-level problem descriptions instead of operator-task-level ones.
 - Whitespace-by-elimination: desk research reproduces publicly quantified pain, which is where funded competitors sit; what survives a competitive screen is "least crowded," not "most demanded." Interviews are the only path to genuinely unclaimed problems — desk work prepares them, never replaces them.
+
+## The daily batch runs in a fresh session (fixed 2026-07-31)
+
+The daily outreach Routine must be configured with `create_new_session_on_fire`. It originally had no session target, which in this runtime means *self-bind*: every 7 AM firing resumed the same conversation instead of starting a new one. That conversation had been alive since 2026-07-26 â€” 2,242 records, 8.9 MB, 19 sub-agents â€” so each morning's run began near the usage ceiling and died partway through, three days running. The symptom presented as "the research is too hard" and as a session limit that looked random; the cause was entirely where the run lived.
+
+Two rules follow. **A recurring batch job gets a fresh session per firing** â€” its prompt must therefore be self-contained, since it inherits no context. And **an interactive session used for daily work should be retired every few days**; a long-lived one silently taxes every turn and every job that binds to it. If a scheduled run starts failing on limits after working fine, check the Routine's session binding before touching the work itself.
+
+## Queue-selection failure (outreach, 2026-07-30)
+
+A batch job under-delivered by 4x because it filtered its queue on `target_tier` while the field it actually needed was `contact_N_email`. The two are uncorrelated in `cm-companies.csv` â€” 130 of the 134 rows carrying real addresses are labelled `C - unknown` â€” so a tier-first queue selects *against* the workable rows and burns the run rediscovering addresses that were already in the file.
+
+The general rule: **when a job is starved for output, check what the queue selects on before concluding the work is hard.** Yield per company looked like an immovable research constraint (1 in 5) and was in fact a filter pointed at the wrong column. Before accepting a low-yield result, count the rows that satisfy the *binding* requirement and confirm the queue is actually selecting on it. Compounding it here was a second unexamined assumption â€” one email per company, when the pipeline is designed for 4â€“5 ranked contacts each. Both were invisible in the output, which showed only a plausible-looking small number.

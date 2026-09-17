@@ -1,0 +1,26 @@
+{
+  "company": "Elite Spice, Inc.",
+  "short": "Elite Spice",
+  "slug": "elitespice",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you run microbial reduction in-house instead of sending it out, so the treatment records for every lot have to be reconciled with each customer's food safety questionnaire",
+  "proof": "[proof: elitespice.com/manufacturing/microbial-reduction/ \"Elite Spice operates its own microbial reduction systems employing Ethylene Oxide and Propylene Oxide fumigants... manages these processes in-house\"]",
+  "contacts": [
+    {"rank":1,"name":"Isaac Samuel","title":"President","salutation":"Dear Isaac,",
+     "email":"isamuel@elitespice.com","file":"1-isamuel.eml",
+     "basis":"derived from {f}{last}@ anchored on verbatim pkurpe@, corroborated by ZoomInfo partial i***@elitespice.com for Isaac Samuel",
+     "check":"no kill signal. linkedin.com/in/isaac-samuel-2a862720/ and theorg.com/org/elite-spice/org-chart/isaac-samuel both President. CONFLICT: rocketreach lists a Joey Samuel as president, unresolved",
+     "notes":"salutation: no source, first name. DERIVED address. Company publishes no leadership page, so all names are third-party sourced."},
+    {"rank":2,"name":"Anton Samuel","title":"Vice President","salutation":"Dear Anton,",
+     "email":"samuel@elitespice.com","file":"2-asamuel.eml",
+     "basis":"verbatim published address (D&B export). Deliberately NOT the derived asamuel@ - the published address wins over the pattern",
+     "check":"no kill signal. Also listed as Secretary of Elite Spice in a state registry record, opengovus.com/oregon-business/73325293",
+     "notes":"salutation: no source, first name. Note at least two Samuels work here, so a bare-surname alias may route ambiguously; watch for a wrong-person reply."},
+    {"rank":3,"name":"Paul Kurpe","title":"Vice President Sales","salutation":"Dear Paul,",
+     "email":"pkurpe@elitespice.com","file":"3-kurpe.eml",
+     "basis":"verbatim published address (D&B export), corroborated by ZoomInfo partial p***@elitespice.com",
+     "check":"no kill signal. linkedin.com/in/paul-kurpe-88149430 VP Sales. Rainbow Products and Baltimore Spice listed as past employers, not current",
+     "notes":"salutation: no source, first name. Fields co-pack and custom-blend inquiries."}
+  ]
+}

@@ -25,7 +25,16 @@ asymmetry hypothesis.
 - `alphasense-report*.txt` — raw expert-call transcripts and filings behind those quotes.
 - `cm-research-plan.md` — the co-man operating loop (win work → plan → make → prove → settle),
   **still the canonical loop** used by the new thesis to scope "shop-floor ops."
-- `outreach-drafts/`, `outreach-tracker.csv` — the 24 sent emails and their outcomes.
+- `outreach-drafts/`, `outreach-tracker.csv` — 50 drafts across batches 1–4 and their outcomes,
+  including the bounce-code learnings and the 2026-07-31 recency-bar rule change.
+
+**The `outreach` / `outreach-style` skills remain in `../.claude/skills/`** with their latest
+revisions (queue-selects-on-address-not-tier, and the kill-signal recency test). The pipeline is
+**dormant** — Aman runs all interviews himself under the active thesis — but the skills are kept
+because the rules in them were bought with four batches of real sends.
+
+`IP-Meeting1-Manufacturing-AI.pptx` (repo root) is the first IP meeting deck from this era, kept at
+root as IP history.
 
 ## `fnb-run-2026-07/`
 

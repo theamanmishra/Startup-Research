@@ -1,0 +1,66 @@
+{
+  "company": "Gonnella Baking Co.",
+  "short": "Gonnella",
+  "slug": "gonnella",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "every one of your facilities goes through an annual SMETA 4-Pillar audit, so the same evidence has to be pulled together again for each customer that asks for its own version",
+  "proof": "[proof: gonnella.com/about-us/awards-certifications/ \"All of our facilities undergo an annual SMETA 4-Pillar Audit\"; contract baking + private label per gonnella.com/industries-gonnella-serves/contract-baking/]",
+  "contacts": [
+    {
+      "rank": 1,
+      "name": "Dave Marcucci",
+      "title": "President",
+      "salutation": "Dear Dave,",
+      "email": "dmarcucci@gonnella.com",
+      "file": "1-dmarcucci.eml",
+      "basis": "derived from {f}{last}@ double-confirmed by bmarcucci@ and tsedlacek@",
+      "check": "no kill signal. Named President in the 2026-01-05 Lineage acquisition release, theshelbyreport.com/2026/01/05/gonnella-baking-co-acquires-lineage-manufacturing-llc/",
+      "notes": "salutation: no source, first name. DERIVED address. Gonnella publishes no executive page; officers come from trade press."
+    },
+    {
+      "rank": 2,
+      "name": "Bob Marcucci",
+      "title": "Vice President of Operations",
+      "salutation": "Dear Bob,",
+      "email": "bmarcucci@gonnella.com",
+      "file": "2-bmarcucci.eml",
+      "basis": "verbatim published address (D&B export). Note local part follows the used first name, Bob not Robert",
+      "check": "no kill signal. LinkedIn and ZoomInfo both current VP Operations, now under Gonnella Frozen Products LLC, the Jan-2026 entity",
+      "notes": "salutation: no source, first name. Do not mention rank 1 to him or vice versa, shared surname but separate messages."
+    },
+    {
+      "rank": 3,
+      "name": "Bob Nasshan",
+      "title": "Contract Baking Sales Manager",
+      "salutation": "Dear Bob,",
+      "email": "bnasshan@gonnella.com",
+      "file": "3-nasshan.eml",
+      "basis": "derived from {f}{last}@ confirmed by bmarcucci@ and tsedlacek@",
+      "check": "no kill signal. Own site gonnella.com/about-us/gonnella-sales-team/ lists him Contract Baking Sales Manager, live 2026-07-31",
+      "notes": "salutation: no source, first name. This is the person who fields co-pack enquiries, which is why he ranks above the CFO. Title varies across aggregators, own site is authoritative."
+    },
+    {
+      "rank": 4,
+      "name": "Todd Sedlacek",
+      "title": "Chief Financial Officer",
+      "salutation": "Dear Todd,",
+      "email": "tsedlacek@gonnella.com",
+      "file": "4-sedlacek.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal, but FLAG: a same-name LinkedIn profile reads Indiana Sugars while ZoomInfo shows CFO at Gonnella. Unresolved same-person ambiguity, not a kill",
+      "notes": "salutation: no source, first name."
+    },
+    {
+      "rank": 5,
+      "name": "Dave Gonnella",
+      "title": "Vice President of Sales",
+      "salutation": "Dear Dave,",
+      "email": "dgonnella@gonnella.com",
+      "file": "5-dgonnella.eml",
+      "basis": "derived from {f}{last}@ confirmed by bmarcucci@ and tsedlacek@",
+      "check": "no kill signal. Own site gonnella.com/about-us/gonnella-sales-team/ lists him VP of Sales, live 2026-07-31",
+      "notes": "salutation: no source, first name. DERIVED address."
+    }
+  ]
+}

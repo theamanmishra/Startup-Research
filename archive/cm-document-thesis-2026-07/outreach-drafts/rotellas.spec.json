@@ -1,0 +1,77 @@
+{
+  "company": "Rotella's Italian Bakery, Inc.",
+  "short": "Rotella",
+  "slug": "rotellas",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you bake as many as 400 varieties, for household-name brands as well as your own, so one formulation change has to be written up separately for every brand owner whose spec it touches",
+  "proof": "[proof: rotellasbakery.com/our-story/ \"we now produce as many as 400 varieties-including for national and wholesale distribution, as well as household-name brands you have long trusted\"; SQF Level 3 per rotellasbakery.com/our-story/timeline-2/]",
+  "contacts": [
+    {
+      "rank": 1,
+      "name": "Louis Rotella Jr.",
+      "title": "President / CEO",
+      "salutation": "Dear Mr. Rotella,",
+      "email": "lou@rotellasbakery.com",
+      "file": "1-rotella.eml",
+      "basis": "verbatim published address (D&B export); family exception to the {f}{last}@ pattern",
+      "check": "no kill signal. Own site rotellasbakery.com/our-story/ names him President / CEO, live 2026-07-31",
+      "notes": "salutation: Mr. per own site \"his son, Louis Jr.\" and \"Louis Jr. devoted his career to product innovation\". Bounce-test inbox: orderdesk@rotellasbakery.com"
+    },
+    {
+      "rank": 2,
+      "name": "Bradley Costanzo",
+      "title": "Chief Financial Officer",
+      "salutation": "Dear Bradley,",
+      "email": "bcostanzo@rotellasbakery.com",
+      "file": "2-costanzo.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal - dedicated search returned only undated aggregator profiles, no new employer, no departure",
+      "notes": "salutation: no published source states a courtesy title or pronouns, first name per skill rule. Drafted under the kill-signal bar adopted 2026-07-31; under the previous positive-proof bar he was benched."
+    },
+    {
+      "rank": 3,
+      "name": "Stephen Frankenfield",
+      "title": "Chief Information Officer",
+      "salutation": "Dear Stephen,",
+      "email": "sfrankenfield@rotellasbakery.com",
+      "file": "3-frankenfield.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal - LinkedIn activity decoding to 2025-05-10 dates the account not the role, and shows no new employer",
+      "notes": "salutation: no source, first name. On-thesis despite being IT: the carrier asks how much of the documentation work is still manual, which is his domain."
+    },
+    {
+      "rank": 4,
+      "name": "Jim Rotella",
+      "title": "Vice President of Sales",
+      "salutation": "Dear Mr. Rotella,",
+      "email": "jrotella@rotellasbakery.com",
+      "file": "4-jrotella.eml",
+      "basis": "derived from {f}{last}@ confirmed by bcostanzo@ and sfrankenfield@ agreeing. RISK: lou@ shows the family may use bare first names, so jim@ is possible",
+      "check": "no kill signal. Own site rotellasbakery.com/food-service/national-sales-alignment/ lists him VP Sales, live 2026-07-31",
+      "notes": "salutation: Mr. per the same family bio source as rank 1; shared surname is fine in a one-to-one email. ADDRESS RISK flagged - watch the bounce test before assuming delivery."
+    },
+    {
+      "rank": 5,
+      "name": "Rocky Rotella",
+      "title": "Director of Sales",
+      "salutation": "Dear Mr. Rotella,",
+      "email": "rrotella@rotellasbakery.com",
+      "file": "5-rrotella.eml",
+      "basis": "derived from {f}{last}@ confirmed by bcostanzo@ and sfrankenfield@ agreeing. Same family first-name risk as rank 4",
+      "check": "no kill signal. Own site national-sales-alignment page lists him Director of Sales, live 2026-07-31",
+      "notes": "salutation: Mr. per family bio source. ADDRESS RISK flagged. Do not mention rank 4 to rank 5 or vice versa."
+    },
+    {
+      "rank": 6,
+      "name": "Jim Vecchio",
+      "title": "National Sales Manager",
+      "salutation": "Dear Jim,",
+      "email": "jvecchio@rotellasbakery.com",
+      "file": "6-vecchio.eml",
+      "basis": "derived from {f}{last}@ double-confirmed by bcostanzo@ and sfrankenfield@; non-family so the lou@ exception does not apply",
+      "check": "no kill signal. Own site national-sales-alignment page lists him National Sales Manager, live 2026-07-31",
+      "notes": "salutation: no source, first name. Fields co-pack inquiries."
+    }
+  ]
+}

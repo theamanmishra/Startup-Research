@@ -1,0 +1,44 @@
+{
+  "company": "Lone Star Bakery, Inc.",
+  "short": "Lone Star",
+  "slug": "lonestar",
+  "date": "2026-07-31",
+  "batch": "2026-07-31",
+  "insight": "you co-manufacture for retail brands on the same lines that turn out two and a half million biscuits a day, so one specification change has to be carried into each brand owner's own paperwork",
+  "proof": "[proof: lonestarbakery.com/company/ \"We also co-manufacture for many top retail food brands American consumers crave\"; lonestarbakery.com/products/ \"Over 2.5 million biscuits roll out of our ovens daily\"]",
+  "contacts": [
+    {
+      "rank": 1,
+      "name": "Tracy Fletcher",
+      "title": "President",
+      "salutation": "Dear Ms. Fletcher,",
+      "email": "tracyfletcher@lonestarbakery.com",
+      "file": "1-fletcher.eml",
+      "basis": "verbatim published address (D&B export)",
+      "check": "no kill signal. Quoted as president in Commercial Baking 2026-03-06, commercialbaking.com/automation-leads-to-diversification-for-lone-star-bakery/. CORRECTS the CSV, which had her as VP",
+      "notes": "salutation: Ms. per foodchainmagazine.com piece using she/her, \"she laughs\", \"her team\"."
+    },
+    {
+      "rank": 2,
+      "name": "Dave Tarin",
+      "title": "Director of Inventory Management",
+      "salutation": "Dear Dave,",
+      "email": "davetarin@lonestarbakery.com",
+      "file": "2-tarin.eml",
+      "basis": "derived from {first}{last}@ confirmed by tracyfletcher@ and sharonmartin@ agreeing",
+      "check": "no kill signal. Named in Commercial Baking 2026-03-06 as director of inventory management",
+      "notes": "salutation: no source, first name. DERIVED address."
+    },
+    {
+      "rank": 3,
+      "name": "Mac Morris",
+      "title": "Family owner",
+      "salutation": "Dear Mr. Morris,",
+      "email": "macmorris@lonestarbakery.com",
+      "file": "3-morris.eml",
+      "basis": "derived from {first}{last}@ confirmed by tracyfletcher@ and sharonmartin@ agreeing",
+      "check": "no kill signal. foodchainmagazine.com 2024: \"Although he is settling down, he still comes in every day\"",
+      "notes": "salutation: Mr. per that same source, he/him. AMBIGUITY: two Macs, Mac Morris Sr who bought the bakery in 1956 and Mac Morris Jr, Tracy Fletcher's father. Semi-retired, ranked last."
+    }
+  ]
+}
