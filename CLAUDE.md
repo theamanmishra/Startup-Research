@@ -4,13 +4,30 @@ Structured startup-ideation for Aman (ex-ITC CPG supply chain & ops, HBS MBA, AI
 
 ## Files
 
+**Method (stable):**
 - `problem-statement-engine.md` — the MAP + EVALUATE methodology. Edit only when explicitly asked.
 - `industry-priorities.md` — which verticals to map, in what order.
-- `founder-profile.md` — the edge filter for scoring.
+- `founder-profile.md` — the edge filter for scoring. Note the Bespoke IP / invention-assignment constraint on anything in the AI-data space.
 - `inventory.csv` — raw problem pool (all harvested problems, unfiltered).
 - `tracker.csv` — scored candidates only.
-- `cm-dive-brief.md` — current active dive: US contract manufacturing (moves into its vertical folder once created).
-- One folder per vertical: `f-and-b/` holds the completed F&B run (see `f-and-b/fnb-research-record.md`; authoritative xlsx + PPTs to be committed there). A `contract-manufacturing/` folder will be created for the active dive. Raw sweep notes go inside the vertical's folder as `research-YYYY-MM-DD-topic.md`.
+
+**`manu-data-layer/` — ACTIVE thesis (since 2026-09).** Shop-floor data layer for mid-market US F&B
+manufacturers: acquisition and contextualization of machine telemetry, not storage. Aman's
+workstream; Adarsh runs the parallel "selling data to frontier/neo labs" column. Plan and locked
+whiteboard in `mdl-research-plan.md`. **Aman runs all interviews himself — Claude does desk research
+only.** Files prefixed `mdl-`.
+
+**`contract-manufacturing/` — live segment data** (survives the thesis change):
+- `cm-companies.csv` — the 1,155-firm D&B-derived frame, now carrying `subsegment_p1` / `p1_basis` / `coman_in_desc`. **Provenance warning:** the original export's filter settings are lost; the frame is inferred to be US food/bev manufacturers with a ~$20M revenue floor, so the $10–20M slice is missing.
+- `research-2026-09-10-coman-subsegment-classification.md` · `research-2026-09-11-census-universe-counts.md` — sub-segment taxonomy and exact SUSB 2022 firm counts by receipts band.
+- `cm-market-structure.md` · `cm-arena.md` · `cm-operator-voice.md` — market sizing, July arena map, operator quotes.
+
+**`archive/` — superseded, kept for provenance and reusable evidence.** See `archive/README.md`
+before citing anything from it. `cm-document-thesis-2026-07/` holds the parked document/paperwork
+thesis (and the canonical co-man operating loop: win work → plan → make → prove → settle);
+`fnb-run-2026-07/` holds the completed F&B industry map.
+
+Raw sweep notes go inside the active folder as `research-YYYY-MM-DD-topic.md`.
 
 ## Hard research rules (non-negotiable)
 
