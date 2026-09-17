@@ -17,6 +17,25 @@ make those calls sharp, and an interview kit. Supersedes v1's 6-sprint schedule.
 > **Q2** — To solve for these problems what data is req'd & in what format?
 > **Q3** — Are there commonalities in the data requirements?
 
+## The board is the canonical framework — do not substitute another
+
+**Every source, deliverable and next step maps to a line on the board above.** Do not invent a
+parallel set of questions. The mapping:
+
+| Board line | What answers it | Status |
+|---|---|---|
+| **ICP ② Manufacturers** | Census SUSB 2022 firm counts by product and revenue band (~3,000–3,500 US firms at $10–100M); `../contract-manufacturing/cm-companies.csv` for names to call | Counts done; names weak (lost provenance) |
+| **ICP ① SaaS cos for Manu AI** | Population count during the arena pass — tests whether it is a market at all | Not started |
+| **Hypothesis, asterisk 1 (*data exists*)** | Regulation that mandates recording (21 CFR 113 retort records; 21 CFR 114 acidified; USDA FSIS) vs. contrary July evidence (60% of sub-$1B food cos on laptops and Excel; the clean-data warning) | Sources identified, conflict open |
+| **Hypothesis, asterisk 2 (*not usable*)** | Contextualization gap — what it takes to join a machine signal to batch, product, line, shift | Not started |
+| **Q1 — what problem can new tech solve** | (a) process flows of hyper-niches → OEM manuals, SQF/BRC clauses; (b) manu AI companies → arena pass | Not started |
+| **Q2 — what data, what format** | Vendor connector docs and job postings (each competitor has already solved this for their problem); then a data column on every harvested problem | Not started |
+| **Q3 — commonalities** | The convergence matrix, built from Q2's answers, plus the layer call (acquisition / contextualization / storage) | Not started |
+
+Source grades and dependencies live in `mdl-sources.md`. Communication standard for this
+workstream: **MBB-consultant-to-client** — big picture first, then structure, then detail; always
+state where a piece of evidence sits in the larger scheme.
+
 ## Three things that live here, not on the board
 
 1. **The hypothesis is two claims.** *Data exists* → if false, this is an **acquisition/sensing**

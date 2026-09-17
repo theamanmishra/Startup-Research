@@ -16,6 +16,12 @@ manufacturers: acquisition and contextualization of machine telemetry, not stora
 workstream; Adarsh runs the parallel "selling data to frontier/neo labs" column. Plan and locked
 whiteboard in `mdl-research-plan.md`. **Aman runs all interviews himself — Claude does desk research
 only.** Files prefixed `mdl-`.
+- `mdl-sources.md` — **the source register. Append a row for every source used**, with a grade
+  (A primary / B credible secondary / C weak / D model knowledge) and what depends on it. Keep it
+  current as work proceeds; it is the index behind rule 1.
+- `mdl-decision-log.md` — **every choice that narrowed the work**: options considered, reasoning, and
+  what would reverse it. Append-only; never rewrite a past entry. Add an entry whenever a decision
+  narrows scope, sets weights, or picks between options.
 
 **`contract-manufacturing/` — live segment data** (survives the thesis change):
 - `cm-companies.csv` — the 1,155-firm D&B-derived frame, now carrying `subsegment_p1` / `p1_basis` / `coman_in_desc`. **Provenance warning:** the original export's filter settings are lost; the frame is inferred to be US food/bev manufacturers with a ~$20M revenue floor, so the $10–20M slice is missing.
