@@ -35,6 +35,14 @@ thesis (and the canonical co-man operating loop: win work → plan → make → 
 
 Raw sweep notes go inside the active folder as `research-YYYY-MM-DD-topic.md`.
 
+**Skills (`.claude/skills/`):** `outreach` + `outreach-style` run the cold-email pipeline.
+**`ip-deck` builds the weekly Independent Project update deck for Prof. Ferreira** — the house
+format, a shape/measurement toolkit, and a render-and-look check. Invoke the skill rather than
+hand-rolling a deck: the format took several rounds of revision to settle, and the two rules it
+exists to enforce are that the deck is *read alone, not presented* (so every term is unpacked on
+the slide and the conclusion is never left in the speaker notes) and that **no deck is shown to
+Aman until it has been rendered to PNG and looked at**.
+
 ## Hard research rules (non-negotiable)
 
 1. **Source gate.** Every numeric or named claim — market size, margin, regulation, competitor funding or pricing — carries an inline source URL. If no source exists, write `[UNVERIFIED]` next to the claim. Never smooth an unverified claim into confident prose.
