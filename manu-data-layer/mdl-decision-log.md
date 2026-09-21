@@ -226,3 +226,16 @@ worthless as data. Regulation proves the measurement is *taken*; it does not pro
 This is the single largest risk in the niche screen, it cannot be resolved from a desk, and it is
 question one for Aman's calls. If the answer is "paper," the business starts at acquisition, not
 contextualization — which is D2's first layer, so the thesis survives but the product changes.
+
+---
+
+## D13 · Dual data capture model: machine telemetry + humanoid robotics training data
+**Date:** 2026-09-21 · **Aman's input** · **Board line:** scope header & new business model
+
+**Decision.** In mapping every process flow, track two distinct data layers:
+1. **Layer A (Machine Telemetry / Process AI):** Slow process readings, fast physics, and batch metadata to solve shop-floor quality, energy, and FDA compliance.
+2. **Layer B (Humanoid Robotics Training Data):** Identify specific high-dexterity, spatial, or heavy manual tasks (sorting, tamping, crate divider loading, seam teardown inspection, palletizing) that can be recorded via wearable capture gear (smart glasses / egocentric video, haptic gloves) and sold to frontier humanoid robotics labs (Adarsh's column / Figure, 1X, Tesla Optimus).
+
+**Why.** Food manufacturing has high human dexterity demands in unstructured, wet, and variable environments—the exact data frontier robotics labs lack. Monitored workers wearing capture kits convert a manual factory bottleneck into a high-margin data asset.
+
+**Reverse if.** Plant managers or labor unions forbid wearable recording devices on food safety, privacy, or biosecurity grounds.
