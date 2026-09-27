@@ -226,37 +226,77 @@ That is a real competitive fact the current chart hides by treating the six step
 
 ---
 
-## 7. Proposed revised chart
+## 7. Proposed replacement: the five gates
 
-Keep the six plain-English steps — they are the chart's strength — and make four changes:
+The existing chart answers *"who sells what."* The thesis needs a chart that answers *"can this
+plant's data reach a decision, and where does it stop."* Those are different questions, and the
+second is the one Prof. Ferreira is asking.
 
-1. **Add Level 0 at the bottom:** *"The instruments themselves — is there a sensor on that pipe at
-   all?"* with the retort-versus-seamer contrast as the worked example.
-2. **Add Level 4 at the top:** *"Business systems — the order, the recipe version, the customer, the
-   cost standard."*
-3. **Redraw steps 5 and 6 as consumers alongside the stack, not after it**, with explicit bypass
-   arrows from Level 0 straight to step 5 (Augury), and from the operator straight to step 6 (Tulip,
-   Redzone).
-4. **Add a side rail** for the three categories that gate or enable every project: OT security,
-   systems integrators, and maintenance/quality systems.
+So the proposal is to replace the six-step vendor pipeline with a **flow that follows one
+measurement from the physical event to a business decision, through five gates.** Each gate is a
+real failure mode, each has a named example from our own retort work, and each has a set of vendors
+whose entire business is that gate. "Does the data exist" stops being one asterisk and becomes five
+questions a plant manager can actually answer.
 
+```mermaid
+flowchart TD
+    S["<b>A physical event on the line</b><br/><i>the retort heats the batch to 250°F</i>"] --> G1
+
+    G1{"<b>1 · MEASURED</b><br/>Is there an instrument on it?"}
+    G1 -->|No| F1["<b>DATA DOES NOT EXIST</b><br/>Nothing downstream is possible.<br/><br/><i>Can seamer: no continuous seal<br/>instrument. Three cans torn down<br/>every 2–4 hrs with a micrometer.</i><br/><br/>Whose business: instrument makers<br/>Endress+Hauser · Rosemount · Cognex<br/>or a vendor bringing its own — <b>Augury</b>"]
+    G1 -->|Yes| G2
+
+    G2{"<b>2 · CAPTURED</b><br/>Does the reading become<br/>a digital record?"}
+    G2 -->|"No — paper"| F2["<b>EXISTS, BUT UNREACHABLE</b><br/><br/><i>Retort: five federally mandated RTDs<br/>writing to a circular paper ink chart.<br/>Legally compliant. Useless as data.</i><br/><br/>Whose business: edge capture,<br/>chart-recorder replacement"]
+    G2 -->|Yes| G3
+
+    G3{"<b>3 · REACHABLE</b><br/>Can it get off the machine<br/>and onto a network?"}
+    G3 -->|No| F3["<b>LOCKED INSIDE THE PLC</b><br/>Proprietary protocol, no IT/OT path.<br/><br/><i>Dragos: shared IT/OT domains in<br/>nearly half of manufacturing sites —<br/>the worst of any sector.</i><br/><br/>Whose business: <b>Kepware · Litmus</b><br/>250+ drivers. Largely commoditised."]
+    G3 -->|Yes| G4
+
+    G4{"<b>4 · CONTEXTUALISED</b><br/>Does the number mean<br/><i>batch 4471, line 2, shift B</i>?"}
+    G4 -->|No| F4["<b>A NUMBER WITH NO MEANING</b><br/>The modelling tools exist —<br/><b>HighByte · Litmus · HiveMQ</b> —<br/>but every tag is mapped by hand.<br/><br/><i>$50–150k of integrator time,<br/>which a $40M plant cannot spend.</i>"]
+    G4 -->|Yes| G5
+
+    G5{"<b>5 · JOINED TO THE OUTCOME</b><br/>Is it linked to what happened —<br/>lab result, scrap, complaint?"}
+    G5 -->|No| F5["<b>YOU SEE THE PROCESS,<br/>NOT WHETHER IT WORKED</b><br/><br/>Whose business: <b>Sight Machine ·<br/>Seeq · Oden</b> — the only vendors<br/>that traverse the whole stack,<br/><i>and they price at $150–500k+</i>"]
+    G5 -->|Yes| WIN["<b>A DECISION CAN IMPROVE</b><br/>Release the lot · re-cook or scrap ·<br/>stop the seamer · push the line faster"]
+
+    style F1 fill:#fdece8,stroke:#c0392b
+    style F2 fill:#fdece8,stroke:#c0392b
+    style F3 fill:#fdece8,stroke:#c0392b
+    style F4 fill:#fdece8,stroke:#c0392b
+    style F5 fill:#fdece8,stroke:#c0392b
+    style WIN fill:#e8f3ee,stroke:#1e7a4f
+    style S fill:#eef2f6,stroke:#33475b
 ```
-         ┌─────────────────────────────────────────────────────────────┐
-  L4     │  BUSINESS SYSTEMS — order, recipe version, customer, cost   │
-         └──────────────────────────┬──────────────────────────────────┘
-  L3     │  PLANT RECORDS — historian, MES, lot genealogy, release     │◄──┐
-         └──────────────────────────┬──────────────────────────────────┘   │
-  NEW    │  DATA TRANSLATION — edge, broker, unified namespace         │   │  ANALYTICS & AI
-         └──────────────────────────┬──────────────────────────────────┘   │  (Step 5)
-  L2     │  SUPERVISORY — SCADA screens, alarms, setpoints             │   │  attaches at
-         └──────────────────────────┬──────────────────────────────────┘   │  several levels
-  L1     │  CONTROL — PLC, DCS: milliseconds                           │   │
-         └──────────────────────────┬──────────────────────────────────┘   │
-  L0     │  INSTRUMENTS — the sensors. IS THERE ONE AT ALL?            │───┘  ← Augury bypass
-         └─────────────────────────────────────────────────────────────┘
-   side rail:  OT security  ·  systems integrators  ·  CMMS / LIMS
-   CONNECTED WORKER (Step 6) — a parallel path: operator → tablet, touching none of the above
-```
+
+### The bypasses, drawn on the same flow
+
+The reason the old chart misled is that the commercially successful mid-market products **do not
+walk this path**. On the gate flow that becomes legible rather than hidden:
+
+| Vendor | Where it enters | What it skips | Why |
+|---|---|---|---|
+| **Augury** | Solves gate 1 itself — ships its own wireless sensors | Gates 2–5 entirely; its own cloud | Legacy PLCs cannot sample at the kHz rates vibration analysis needs |
+| **Redzone** | Gate 1, minimally — one photo-eye plus operator taps | Gates 2–5 | Its mid-market adoption is *because* it avoids PLC work |
+| **Tulip** | Skips the machine altogether — asks a human | Gates 1–4 | USB scales and calipers; a parallel path that never touches control |
+| **Vision** (Cognex, Keyence) | Gate 1 as a camera, decides at the edge | Gates 3–5 — the verdict is often never logged | Inference happens locally; only a reject signal goes back |
+| **Seeq** | Enters at gate 5 | Assumes 1–4 already solved | Reads the installed historian |
+| **Sight Machine, Oden** | Walks the whole flow | Nothing | Which is why they cost $150–500k+ |
+
+### Why this chart is the right one for the thesis
+
+1. **It puts the thesis on the map.** D2 claims acquisition and contextualization — that is
+   **gates 2, 3 and 4**, and the chart shows gate 3 is commoditised while gate 4 is not. The gap is
+   one box, not a vague layer.
+2. **It makes the hypothesis testable in a sentence.** *Which gate does your plant stop at?* is a
+   question a plant manager can answer in thirty seconds, and no desk source can answer at all.
+3. **It separates the two halves of the board's asterisk.** *Data exists* is gate 1; *not in a usable
+   format* is gates 2 through 5. Those have been running together.
+4. **It carries the competitive fact.** Every gate names who owns it, so the chart is also the arena
+   map — and it shows that the further right you go, the more it costs, which is the mid-market
+   squeeze in one picture.
 
 ---
 
