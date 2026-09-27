@@ -59,6 +59,14 @@ These platforms represent the potential *underlying plumbing* or direct competit
 * **The Mid-Market Barrier:** Exceptional for digitizing human workflows (line-clearance checklists, manual weigh-and-dispense, SOPs), but weak on deep high-frequency machine telemetry (e.g. continuous motor load or thermal profiling).
 * **Source:** https://tulip.co/
 
+### 5. HiveMQ (HiveMQ Edge & Data Hub)
+* **Category:** Industrial MQTT Infrastructure / Unified Namespace (UNS) Broker.
+* **Architecture:** Enterprise MQTT broker paired with open-source edge runtime (HiveMQ Edge) and broker-level policy engine (HiveMQ Data Hub).
+* **Protocols & Ingestion:** Modbus, Siemens S7, OPC UA, BACnet, MQTT Sparkplug B, Kafka.
+* **Data Contextualization Approach:** HiveMQ Data Hub provides schema validation and script-based policy transformations at the broker level to enforce UNS naming and JSON schema governance.
+* **The Mid-Market Barrier:** HiveMQ is developer-first enterprise infrastructure deployed via Docker/Kubernetes. It provides the protocol conversion and message highway, but does not provide out-of-the-box batch-to-telemetry auto-contextualization; plants must write their own transformation scripts or hire an integrator.
+* **Source:** https://www.hivemq.com/
+
 ---
 
 ## Tier 2: Application & Manu-AI Players (Reverse-Engineering Data Requirements)
@@ -109,6 +117,27 @@ Examining what these application players ingest reveals exactly what data primit
 * **Ingestion Surface:** Low-friction approach: often a single external photo-eye sensor on the infeed/discharge starwheel or simple operator taps on iPads at huddles. Avoids deep PLC integration.
 * **Lesson for Data Layer:** High adoption in mid-market plants was achieved specifically by *avoiding* complex PLC data engineering.
 * **Source:** https://rzsoftware.com/
+
+### 6. Seeq
+* **Problem Solved:** Advanced time-series self-service analytics, golden-batch profiling, and alarm fatigue elimination.
+* **Data Ingested:** Continuous and batch process time-series (temperatures, flow rates, pH, pressure) from historians.
+* **Ingestion Surface:** Read-only federated connectors sitting on top of installed historians (AVEVA PI, AspenTech IP.21, Honeywell PHD) without moving data.
+* **Lesson for Data Layer:** Proves the power of batch-phase alignment (Dynamic Time Warping) on top of existing historians, but assumes the plant already has an enterprise historian installed.
+* **Source:** https://seeq.com/
+
+### 7. Oden Technologies
+* **Problem Solved:** Real-time continuous process optimization and prescriptive speed/scrap recommendations for extrusion and plastics.
+* **Data Ingested:** Machine PLC tags (screw RPM, thermal zones, melt pressure, line haul-off speed) joined with QA dimensional metrics.
+* **Ingestion Surface:** Direct edge PLC gateway connections (EtherNet/IP, Beckhoff ADS, Modbus).
+* **Lesson for Data Layer:** Direct proof that mid-market continuous plants will adopt closed-loop AI if it directly targets speed and yield rather than general BI dashboards.
+* **Source:** https://oden.io/
+
+### 8. Cognite (Cognite Data Fusion)
+* **Problem Solved:** Enterprise-scale industrial DataOps, 3D digital twins, and IT/OT/ET convergence.
+* **Data Ingested:** Historian time-series (OT), ERP/EAM maintenance work orders (IT), and 3D CAD/P&IDs (ET).
+* **Ingestion Surface:** Hundreds of enterprise connectors building an industrial knowledge graph.
+* **Lesson for Data Layer:** Unifying OT, IT, and ET creates massive value for Fortune 500 energy/chemical operators, but requires multimillion-dollar implementation budgets far outside mid-market reach.
+* **Source:** https://cognite.com/
 
 ---
 
