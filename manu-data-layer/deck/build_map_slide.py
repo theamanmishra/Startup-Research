@@ -7,133 +7,107 @@ from pptx.enum.shapes import MSO_SHAPE
 
 prs = new_deck()
 s = slide(prs)
-titlebar(s, '4.  The manufacturing technology stack — who owns each layer')
+titlebar(s, '4.  The manufacturing technology stack — every layer, and who owns it')
 
-STACK_W = 8600000
-PAD     = 200000
+STACK_W = 8200000
+PAD     = 190000
 INNER   = STACK_W - 2 * PAD
-RAIL_X  = MX + STACK_W + 200000
+RAIL_X  = MX + STACK_W + 180000
 RAIL_W  = (MX + CW) - RAIL_X
-RINNER  = RAIL_W - 2 * 160000
+RINNER  = RAIL_W - 2 * 140000
 
-eyebrow(s, MX, 870000, STACK_W,
-        'NOTHING IS ACTUALLY KEPT UNTIL LAYER 4 — READ THE TAGS DOWN THE RIGHT EDGE')
+def lh(pt, f=1.22):
+    return int(pt * f * 12700)
 
-def line_h(pt, lh=1.25):
-    return int(pt * lh * 12700)
+eyebrow(s, MX, 862000, STACK_W,
+        'ONE ROW PER THING THAT HAPPENS TO THE DATA. A PRODUCT SITS IN THE ROW IT PRIMARILY DOES.')
+eyebrow(s, RAIL_X, 862000, RAIL_W, 'ATTACH AT SEVERAL ROWS', color=TEAL)
 
-LAYERS = [
-    ('1 \u00b7 SENSORS & INSTRUMENTS', '\u2192  a signal, or nothing',
-     'Does a number exist at all? A probe in the tank, a camera over the line \u2014 or nothing. '
-     'Whoever built the line decided this years ago.',
-     'Emerson Rosemount \u00b7 Anderson-Negele \u00b7 Endress+Hauser \u00b7 Cognex \u00b7 Keyence  |  '
-     'Groen \u00b7 Lee \u00b7 Admix (equipment)  |  Partlow (paper charts)'),
-    ('2 \u00b7 CONTROL', '\u2192  live values, not kept',
-     'The machine\u2019s own computer. Reads the probe and moves the valve thousands of times a second \u2014 '
-     'but it acts on the number, it does not keep it.',
-     'Rockwell Allen-Bradley \u00b7 Siemens SIMATIC \u00b7 Emerson DeltaV \u00b7 Schneider Modicon \u00b7 ABB \u00b7 '
-     'Beckhoff \u00b7 Mitsubishi \u00b7 Omron \u00b7 Yokogawa'),
-    ('3 \u00b7 OPERATOR SCREENS', '\u2192  a screen, not a record',
-     'What the operator sees: live graphics, alarms, start and stop. Built for a human watching now, '
-     'not for a record read later.',
-     'Inductive Automation Ignition (the standard in food) \u00b7 Siemens WinCC \u00b7 Rockwell FactoryTalk View \u00b7 '
-     'AVEVA Wonderware \u00b7 GE iFIX'),
-    None,
-    ('5 \u00b7 THE PLANT RECORD', '\u2192  history you can search',
-     'Keeps the readings, and knows what was being made at the time \u2014 which order, which recipe, which lot.',
-     'AVEVA PI System \u00b7 Siemens Opcenter \u00b7 Rockwell Plex \u00b7 SAP Digital Manufacturing \u00b7 Aptean \u00b7 '
-     'Deacom \u00b7 Nulogy \u00b7 GE Proficy'),
-    ('6 \u00b7 ANALYTICS & AI', '\u2192  an answer to act on',
-     'Turns that history into a prediction, an explanation, or a yield gain. The layer everyone is trying to sell.',
-     'Sight Machine \u00b7 Seeq \u00b7 Augury \u00b7 Oden \u00b7 Cognite \u00b7 Quartic.ai \u00b7 Siemens Senseye \u00b7 '
-     'AspenTech Mtell \u00b7 C3 AI \u00b7 Falkonry'),
+#            name              tag                        description                                             companies
+ROWS = [
+ ('1 · SENSE',        '→  a reading exists',
+  'Creates the number in the first place — a probe, a camera, or a person writing it down.',
+  'Emerson Rosemount · Anderson-Negele · Endress+Hauser · Cognex · Keyence · Augury (fits its own) · Partlow (paper charts)', None),
+ ('2 · CONTROL',      '→  action, nothing stored',
+  'Acts on the number in milliseconds to move a valve or a motor. It does not keep it.',
+  'Rockwell Allen-Bradley · Siemens SIMATIC · Emerson DeltaV · Schneider Modicon · ABB · Beckhoff · Omron · Yokogawa', None),
+ ('3 · SUPERVISE',    '→  a live screen',
+  'Shows a human what is happening right now: graphics, alarms, start and stop.',
+  'Inductive Automation Ignition (the standard in food) · Siemens WinCC · Rockwell FactoryTalk View · AVEVA Wonderware · GE iFIX', None),
+ ('4 · MOVE',         '→  a named stream',
+  'Translates cryptic machine codes and routes them off the floor. Getting bits out is solved.',
+  'HiveMQ · HighByte · Litmus · PTC Kepware · EMQX · Cirrus Link · Siemens Industrial Edge', 'gap'),
+ ('5 · STORE',        '→  years of history',
+  'Keeps the time-series so it can be looked back through.',
+  'AVEVA PI System · AspenTech InfoPlus.21 · GE Proficy Historian · Honeywell PHD · Canary', None),
+ ('6 · CONTEXTUALISE','→  a reading that means something',
+  'Says which order, recipe, lot and shift the reading belongs to. Joining this to row 4 is the unsolved part.',
+  'Siemens Opcenter · Rockwell Plex · SAP Digital Mfg · DELMIA Apriso · TrakSYS · Aptean · Deacom · Nulogy · Sepasoft', 'gap'),
+ ('7 · ANALYSE',      '→  an answer to act on',
+  'Predicts a failure, explains a defect, lifts a yield, or writes a setpoint back down.',
+  'Sight Machine · Seeq · Augury Process Health · Oden · Cognite · Quartic.ai · Senseye · Mtell · Pavilion8 · C3 AI · Falkonry', None),
 ]
 
-TOP, GAP = 1080000, 46000
-NORM_H, GAP_H = 622000, 968000
-
+TOP, GAP, RH = 1060000, 30000, 525000
 y = TOP
-for L in LAYERS:
-    if L is None:
-        box(s, MX, y, STACK_W, GAP_H, [], fill=RUST_L, line=RUST, lw=2.0)
-        cy = y + 72000
-        txt(s, MX + PAD, cy, 1700000, line_h(11.5),
-            [{'t': '4 · DATA TRANSLATION', 'size': 11.5, 'bold': True, 'color': RUST}])
-        txt(s, MX + PAD + 1740000, cy + 12000, INNER - 1740000 - 2300000, line_h(9.5),
-            [{'t': '←  where this project is aimed', 'size': 9.5, 'bold': True, 'italic': True, 'color': RUST}])
-        txt(s, MX + PAD + INNER - 2300000, cy + 22000, 2300000, line_h(8.5),
-            [{'t': '→  a named, storable stream', 'size': 8.5, 'bold': True, 'italic': True,
-              'color': RUST, 'align': PP_ALIGN.RIGHT}])
-        cy += line_h(11.5) + 16000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': 'Turns a code like “N7:0” into “Mixer 3 temperature”, and sends it somewhere it can be kept.',
-              'size': 8.5, 'italic': True, 'color': MUTED}])
-        cy += line_h(8.5) + 10000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': 'HiveMQ · HighByte · Litmus · PTC Kepware · EMQX · Cirrus Link · Siemens Industrial Edge',
-              'size': 8.5, 'color': INK}])
-        cy += line_h(8.5) + 24000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': 'SOLVED — getting the bits off the machine. Litmus ships 250+ drivers; Kepware translates almost any protocol.',
-              'size': 8.5, 'bold': True, 'color': TEAL}])
-        cy += line_h(8.5) + 10000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': 'NOT SOLVED — making that reading mean “batch 4471, line 2, shift B”. Every tag is mapped by hand.',
-              'size': 8.5, 'bold': True, 'color': RUST}])
-        y += GAP_H + GAP
-    else:
-        name, handson, defn, cos = L
-        box(s, MX, y, STACK_W, NORM_H, [], fill=LIGHT, line=BORDER)
-        cy = y + 76000
-        txt(s, MX + PAD, cy, INNER - 2300000, line_h(11),
-            [{'t': name, 'size': 11, 'bold': True, 'color': NAVY}])
-        txt(s, MX + PAD + INNER - 2300000, cy + 22000, 2300000, line_h(8.5),
-            [{'t': handson, 'size': 8.5, 'bold': True, 'italic': True, 'color': STEEL,
-              'align': PP_ALIGN.RIGHT}])
-        cy += line_h(11) + 14000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': defn, 'size': 8.5, 'italic': True, 'color': MUTED}])
-        cy += line_h(8.5) + 12000
-        txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': cos, 'size': 8.5, 'color': INK}])
-        y += NORM_H + GAP
-
+for name, tag, defn, cos, mark in ROWS:
+    isgap = mark == 'gap'
+    box(s, MX, y, STACK_W, RH, [], fill=RUST_L if isgap else LIGHT,
+        line=RUST if isgap else BORDER, lw=1.75 if isgap else 1.0)
+    c = RUST if isgap else NAVY
+    cy = y + 56000
+    txt(s, MX + PAD, cy, INNER - 2450000, lh(10.5),
+        [{'t': name, 'size': 10.5, 'bold': True, 'color': c}])
+    txt(s, MX + PAD + INNER - 2450000, cy + 14000, 2450000, lh(8),
+        [{'t': tag, 'size': 8, 'bold': True, 'italic': True,
+          'color': c if isgap else STEEL, 'align': PP_ALIGN.RIGHT}])
+    cy += lh(10.5) + 10000
+    txt(s, MX + PAD, cy, INNER, lh(8),
+        [{'t': defn, 'size': 8, 'italic': True, 'color': MUTED}])
+    cy += lh(8) + 8000
+    txt(s, MX + PAD, cy, INNER, lh(8),
+        [{'t': cos, 'size': 8, 'color': INK}])
+    y += RH + GAP
 STACK_BOTTOM = y - GAP
 
-# ------------------------------------------------------------------ rails
-def rail(x, ytop, h, fill, edge, head, hcol, items):
-    box(s, x, ytop, RAIL_W, h, [], fill=fill, line=edge)
-    txt(s, x + 160000, ytop + 100000, RINNER, line_h(9.5),
-        [{'t': head, 'size': 9.5, 'bold': True, 'color': hcol}])
-    cy = ytop + 100000 + line_h(9.5) + 60000
-    for body, bold, col in items:
-        hh = text_h(body, 8.5, RINNER, 8.5 * 1.3)
-        txt(s, x + 160000, cy, RINNER, hh,
-            [{'t': body, 'size': 8.5, 'bold': bold, 'color': col, 'lh': 1.3}])
-        cy += hh + 95000
+# --------------------------------------------------- attached systems (right)
+ATT = [
+ ('QUALITY & COMPLIANCE', 'SafetyChain · Trustwell · TraceGains · FoodReady · Specright · Safefood 360 · LabWare and SampleManager (lab)'),
+ ('MAINTENANCE',          'MaintainX · Fiix · UpKeep · IBM Maximo · Limble'),
+ ('PLAN & ORDER',         'SAP · Oracle · NetSuite · Infor · o9 · Blue Yonder · RELEX · PlanetTogether · Semia'),
+ ('FRONTLINE CAPTURE',    'Tulip · Redzone · Parsable · Augmentir · Dozuki · Evocon'),
+]
+ah = (STACK_BOTTOM - TOP - 3 * 30000) / 4.0
+ay = TOP
+for head, cos in ATT:
+    box(s, RAIL_X, ay, RAIL_W, ah, [], fill=TEAL_L, line=TEAL)
+    txt(s, RAIL_X + 140000, ay + 52000, RINNER, lh(9),
+        [{'t': head, 'size': 9, 'bold': True, 'color': TEAL}])
+    txt(s, RAIL_X + 140000, ay + 52000 + lh(9) + 14000, RINNER,
+        text_h(cos, 8, RINNER, 8 * 1.28),
+        [{'t': cos, 'size': 8, 'color': INK, 'lh': 1.28}])
+    ay += ah + 30000
 
-rh = (STACK_BOTTOM - TOP - 150000) / 2.0
-rail(RAIL_X, TOP, rh, STEEL_L, STEEL, 'GATES EVERY LAYER', STEEL, [
-    ('OT network security — Claroty, Dragos, Nozomi. Nothing leaves the plant network without a security review.', False, INK),
-    ('Systems integrators — they build these deployments, and they are why the bill is $50–150k.', False, INK),
-    ('Regulation — FDA 21 CFR 113 and 114, Grade A PMO, USDA FSIS. The only force that makes a measurement compulsory.', False, INK),
-])
-rail(RAIL_X, TOP + rh + 150000, rh, TEAL_L, TEAL, 'SKIPS EVERY LAYER', TEAL, [
-    ('Augury fits its own wireless sensors and goes straight to its own cloud.', False, INK),
-    ('Tulip and Redzone ask the operator on a tablet, never touching the control system.', False, INK),
-    ('These are the products that actually sold into mid-sized plants — by avoiding layers 2 to 5.', True, TEAL),
-])
+# --------------------------------------------------- footer: gates + bypass
+fy = STACK_BOTTOM + 80000
+box(s, MX, fy, CW, 400000, [], fill=STEEL_L, line=STEEL)
+txt(s, MX + 190000, fy + 58000, CW - 380000, lh(8.5),
+    [{'t': 'GATES EVERY ROW:   OT security (Claroty, Dragos)   \u00b7   systems integrators, who are why the bill is $50\u2013150k   '
+           '\u00b7   regulation (FDA 21 CFR 113 and 114, Grade A PMO, USDA FSIS)',
+      'size': 8.5, 'color': INK}])
+txt(s, MX + 190000, fy + 58000 + lh(8.5) + 16000, CW - 380000, lh(8.5),
+    [{'t': 'SKIPS MOST ROWS:   Augury fits its own sensors and goes straight to its cloud   \u00b7   Tulip and Redzone ask the operator instead   '
+           '\u00b7   these are what actually sold into mid-sized plants',
+      'size': 8.5, 'color': INK}])
 
-# ------------------------------------------------------------------ conclusion
-band(s, STACK_BOTTOM + 110000, 'WHAT THE MAP SAYS',
-     'Every layer has an entrenched owner except one — joining a machine reading to the batch it belongs to, '
-     'at a price a $10–100M plant can pay. Whether that gap is a business depends on what the decision costs '
-     'today without it, which no vendor publishes.',
-     dark=True, size=12, line=17.5)
+band(s, fy + 470000, 'WHAT THE MAP SAYS',
+     'Rows 4 and 5 are solved and commoditised. Row 6 exists only inside enterprise systems. The unsolved cell is the join '
+     'between rows 4 and 6 \u2014 making a reading mean \u201cbatch 4471, line 2, shift B\u201d at a price a $10\u2013100M plant can pay.',
+     dark=True, size=11, line=16)
 
-notes(s, 'One-slide market map. Layers 1-6 are the stack; the right column carries the two things a linear '
-         'chart hides - what gates every layer, and who skips it entirely. Full roster of 163 companies, formal '
-         'layer definitions and the interaction web are in manu-data-layer/mdl-market-map.md.')
+notes(s, 'Stack rows are mutually exclusive on what a product primarily does to the data. The right column holds systems that '
+         'own a business obligation and attach at several rows, which is why they are not in the stack. Full roster of 163 '
+         'companies and formal definitions: manu-data-layer/mdl-market-map.md.')
 
 out = '/tmp/claude-0/-home-user-Startup-Research/875053f8-f957-5b4c-a0b6-026315e8daf2/scratchpad/market-map-slide.pptx'
 prs.save(out)
