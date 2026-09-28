@@ -17,33 +17,36 @@ RAIL_W  = (MX + CW) - RAIL_X
 RINNER  = RAIL_W - 2 * 160000
 
 eyebrow(s, MX, 870000, STACK_W,
-        'A READING FROM A MACHINE TRAVELS DOWN THIS STACK. EVERY LAYER ALREADY HAS AN OWNER — EXCEPT ONE.')
+        'NOTHING IS ACTUALLY KEPT UNTIL LAYER 4 — READ THE TAGS DOWN THE RIGHT EDGE')
 
 def line_h(pt, lh=1.25):
     return int(pt * lh * 12700)
 
 LAYERS = [
-    ('1 · SENSORS, INSTRUMENTS & EQUIPMENT',
-     'Is anything physically measuring it? The equipment maker decides what ships with a sensor.',
-     'Emerson Rosemount · Anderson-Negele · Endress+Hauser · Cognex · Keyence  |  '
-     'Groen · Lee · Admix (equipment)  |  Partlow (paper charts)'),
-    ('2 · CONTROL — the machine’s computer',
-     'Reads the sensors and drives motors and valves, in milliseconds.',
-     'Rockwell Allen-Bradley · Siemens SIMATIC · Emerson DeltaV · Schneider Modicon · ABB · '
-     'Beckhoff · Mitsubishi · Omron · Yokogawa'),
-    ('3 · OPERATOR SCREENS',
-     'The live graphics, alarms and start/stop controls on the plant floor.',
-     'Inductive Automation Ignition (the standard in food) · Siemens WinCC · Rockwell FactoryTalk View · '
-     'AVEVA Wonderware · GE iFIX'),
+    ('1 \u00b7 SENSORS & INSTRUMENTS', '\u2192  a signal, or nothing',
+     'Does a number exist at all? A probe in the tank, a camera over the line \u2014 or nothing. '
+     'Whoever built the line decided this years ago.',
+     'Emerson Rosemount \u00b7 Anderson-Negele \u00b7 Endress+Hauser \u00b7 Cognex \u00b7 Keyence  |  '
+     'Groen \u00b7 Lee \u00b7 Admix (equipment)  |  Partlow (paper charts)'),
+    ('2 \u00b7 CONTROL', '\u2192  live values, not kept',
+     'The machine\u2019s own computer. Reads the probe and moves the valve thousands of times a second \u2014 '
+     'but it acts on the number, it does not keep it.',
+     'Rockwell Allen-Bradley \u00b7 Siemens SIMATIC \u00b7 Emerson DeltaV \u00b7 Schneider Modicon \u00b7 ABB \u00b7 '
+     'Beckhoff \u00b7 Mitsubishi \u00b7 Omron \u00b7 Yokogawa'),
+    ('3 \u00b7 OPERATOR SCREENS', '\u2192  a screen, not a record',
+     'What the operator sees: live graphics, alarms, start and stop. Built for a human watching now, '
+     'not for a record read later.',
+     'Inductive Automation Ignition (the standard in food) \u00b7 Siemens WinCC \u00b7 Rockwell FactoryTalk View \u00b7 '
+     'AVEVA Wonderware \u00b7 GE iFIX'),
     None,
-    ('5 · PLANT RECORDS',
-     'Stores the readings, and knows what was made, to which recipe, on which order.',
-     'AVEVA PI System · Siemens Opcenter · Rockwell Plex · SAP Digital Manufacturing · Aptean · '
-     'Deacom · Nulogy · GE Proficy'),
-    ('6 · ANALYTICS & AI',
-     'Predicts failures, explains scrap, optimises yield. What everyone is trying to sell.',
-     'Sight Machine · Seeq · Augury · Oden · Cognite · Quartic.ai · Siemens Senseye · '
-     'AspenTech Mtell · C3 AI · Falkonry'),
+    ('5 \u00b7 THE PLANT RECORD', '\u2192  history you can search',
+     'Keeps the readings, and knows what was being made at the time \u2014 which order, which recipe, which lot.',
+     'AVEVA PI System \u00b7 Siemens Opcenter \u00b7 Rockwell Plex \u00b7 SAP Digital Manufacturing \u00b7 Aptean \u00b7 '
+     'Deacom \u00b7 Nulogy \u00b7 GE Proficy'),
+    ('6 \u00b7 ANALYTICS & AI', '\u2192  an answer to act on',
+     'Turns that history into a prediction, an explanation, or a yield gain. The layer everyone is trying to sell.',
+     'Sight Machine \u00b7 Seeq \u00b7 Augury \u00b7 Oden \u00b7 Cognite \u00b7 Quartic.ai \u00b7 Siemens Senseye \u00b7 '
+     'AspenTech Mtell \u00b7 C3 AI \u00b7 Falkonry'),
 ]
 
 TOP, GAP = 1080000, 46000
@@ -56,11 +59,14 @@ for L in LAYERS:
         cy = y + 72000
         txt(s, MX + PAD, cy, 1700000, line_h(11.5),
             [{'t': '4 · DATA TRANSLATION', 'size': 11.5, 'bold': True, 'color': RUST}])
-        txt(s, MX + PAD + 1740000, cy + 12000, INNER - 1740000, line_h(9.5),
+        txt(s, MX + PAD + 1740000, cy + 12000, INNER - 1740000 - 2300000, line_h(9.5),
             [{'t': '←  where this project is aimed', 'size': 9.5, 'bold': True, 'italic': True, 'color': RUST}])
+        txt(s, MX + PAD + INNER - 2300000, cy + 22000, 2300000, line_h(8.5),
+            [{'t': '→  a named, storable stream', 'size': 8.5, 'bold': True, 'italic': True,
+              'color': RUST, 'align': PP_ALIGN.RIGHT}])
         cy += line_h(11.5) + 16000
         txt(s, MX + PAD, cy, INNER, line_h(8.5),
-            [{'t': 'Turns a cryptic machine code such as “N7:0” into something software can read, and routes it onward.',
+            [{'t': 'Turns a code like “N7:0” into “Mixer 3 temperature”, and sends it somewhere it can be kept.',
               'size': 8.5, 'italic': True, 'color': MUTED}])
         cy += line_h(8.5) + 10000
         txt(s, MX + PAD, cy, INNER, line_h(8.5),
@@ -76,11 +82,14 @@ for L in LAYERS:
               'size': 8.5, 'bold': True, 'color': RUST}])
         y += GAP_H + GAP
     else:
-        name, defn, cos = L
+        name, handson, defn, cos = L
         box(s, MX, y, STACK_W, NORM_H, [], fill=LIGHT, line=BORDER)
         cy = y + 76000
-        txt(s, MX + PAD, cy, INNER, line_h(11),
+        txt(s, MX + PAD, cy, INNER - 2300000, line_h(11),
             [{'t': name, 'size': 11, 'bold': True, 'color': NAVY}])
+        txt(s, MX + PAD + INNER - 2300000, cy + 22000, 2300000, line_h(8.5),
+            [{'t': handson, 'size': 8.5, 'bold': True, 'italic': True, 'color': STEEL,
+              'align': PP_ALIGN.RIGHT}])
         cy += line_h(11) + 14000
         txt(s, MX + PAD, cy, INNER, line_h(8.5),
             [{'t': defn, 'size': 8.5, 'italic': True, 'color': MUTED}])
