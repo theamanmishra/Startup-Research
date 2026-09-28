@@ -1,5 +1,5 @@
 s = slide(prs)
-titlebar(s, '2.  The manufacturing technology stack — every layer, and who owns it')
+titlebar(s, '1.  The manufacturing technology stack — every layer, and who owns it')
 
 STACK_W = 8200000
 PAD     = 190000

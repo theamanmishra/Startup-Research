@@ -26,18 +26,18 @@ box(s, MX, 2180000, CW, 3560000, [], fill=RGBColor(0x2C,0x36,0x43), line=None)
 txt(s, MX + 300000, 2330000, CW - 600000, 300000,
     [{'t': 'THE UPDATE IN ONE MINUTE', 'size': 11, 'bold': True, 'color': RGBColor(0xC9,0x8A,0x6E)}])
 pts = [
- ('Your challenge was the right one.', 'You asked which business decisions a data layer would improve, how those decisions '
-  'are made today, and what the revenue or cost impact would be. This update takes that seriously and reports how far desk '
-  'research can get.'),
- ('I built the market map properly.', 'Benchmarked against ISA-95, the standard the industry itself uses, then rebuilt so the '
-  'categories are mutually exclusive. 163 companies placed. It locates the opportunity as one cell rather than a vague layer.'),
- ('I can answer half your question.', 'The decisions are nameable and so is how a plant makes them today — on paper charts, by '
-  'destructive sampling, by reconstructing events over several days.'),
- ('I cannot answer the other half, and now know why.', 'I read 36 published vendor case studies. Not one states what the decision '
-  'cost before the software. Every food example is a multi-billion-dollar company, none the size of my target. That is a property '
-  'of vendor evidence, not a gap in my searching.'),
- ('So the next phase is primary research.', 'Two tracks: written mini-cases on the vendors themselves, and a hands-on project with '
-  'a Boston-area plant — the only route to what a decision actually costs.'),
+ ('Completed a detailed market analysis.', 'Studied 163 companies across industrial automation, industrial data '
+  'infrastructure and manufacturing AI, and classified them into clean, non-overlapping buckets based on what each one '
+  'actually does to a plant\u2019s data.'),
+ ('The map locates the opportunity.', 'Six of the seven buckets have an entrenched owner. The one that does not is joining a '
+  'machine reading to the batch it belongs to, at a price a mid-sized plant can pay.'),
+ ('Mapped what a plant decides, and how it decides it today.', 'Five recurring decisions on a canned-food line, made on paper '
+  'chart recorders, by destroying three cans every few hours, and by reconstructing events over several days.'),
+ ('What the published evidence cannot give is the ROI.', 'Read 36 vendor case studies. Every food example is a '
+  'multi-billion-dollar manufacturer, none the size of the target, and not one states what the decision cost before the '
+  'software went in.'),
+ ('So the next phase is primary work.', 'Contact manufacturers to run pilots, and approach the companies already in this market '
+  'to learn how they sell, deploy and price.'),
 ]
 py = 2680000
 for head, body in pts:
@@ -48,51 +48,12 @@ for head, body in pts:
         [{'t': body, 'size': 10.5, 'color': RGBColor(0xB4,0xC0,0xCC), 'lh': 1.35}])
     py += lh(11.5) + bh + 130000
 
-# ============================================================ 2 · THE CHALLENGE
-s = slide(prs)
-titlebar(s, '1.  Your challenge, and how far desk research could take it')
-
-box(s, MX, 1000000, CW, 1000000, [], fill=LIGHT, line=BORDER)
-txt(s, MX + 260000, 1090000, CW - 520000, 240000,
-    [{'t': 'FROM YOUR EMAIL, 21 SEPTEMBER', 'size': 10, 'bold': True, 'color': STEEL}])
-txt(s, MX + 260000, 1360000, CW - 520000, 560000,
-    [{'t': '“Just because data exists doesn’t mean it’s useful… you’ll need to connect how your solution improves business '
-           'decision-making (which decisions?). For each business decision impacted, try to figure out how they currently make '
-           'the decision without your proposed data solution, and what impact your solution would have on revenue and/or cost.”',
-      'size': 11.5, 'italic': True, 'color': INK, 'lh': 1.35}])
-
-COLS = [
- ('WHICH DECISIONS', TEAL, TEAL_L, 'ANSWERABLE FROM DESK',
-  'Named, and tied to specific process steps. Slide 3 lists five, drawn from walking a canned-food line end to end.'),
- ('HOW THEY ARE MADE TODAY', TEAL, TEAL_L, 'ANSWERABLE FROM DESK',
-  'Also answerable, and more damning than expected: a paper chart recorder, three cans destroyed every few hours, a clipboard.'),
- ('WHAT IT COSTS TODAY', RUST, RUST_L, 'NOT ANSWERABLE FROM DESK',
-  'This is the column your question turns on, and it is empty. Slide 5 shows why that is structural rather than a failure of effort.'),
-]
-cw3 = (CW - 2 * 240000) / 3.0
-for i, (head, col, fill, tag, body) in enumerate(COLS):
-    x = MX + i * (cw3 + 240000)
-    box(s, x, 2180000, cw3, 1320000, [], fill=fill, line=col, lw=1.5)
-    txt(s, x + 200000, 2280000, cw3 - 400000, lh(12),
-        [{'t': head, 'size': 12, 'bold': True, 'color': col}])
-    txt(s, x + 200000, 2280000 + lh(12) + 10000, cw3 - 400000, lh(9),
-        [{'t': tag, 'size': 9, 'bold': True, 'italic': True, 'color': col}])
-    txt(s, x + 200000, 2280000 + lh(12) + lh(9) + 60000, cw3 - 400000,
-        text_h(body, 10, cw3 - 400000, 13.5),
-        [{'t': body, 'size': 10, 'color': INK, 'lh': 1.35}])
-
-band(s, 3700000, 'WHAT I DID THIS WEEK',
-     'Benchmarked my landscape chart against ISA-95, the reference model the automation industry uses, and rebuilt it so the '
-     'categories do not overlap. Placed 163 companies in it. Then read every published case study I could find from the vendors '
-     'in it — 36 in total — looking specifically for the before-and-after numbers you asked for.',
-     dark=True, size=11.5, line=16.5)
-
 # ============================================================ 3 · MARKET MAP
 exec(open('/home/user/Startup-Research/manu-data-layer/deck/_map_slide_body.py').read())
 
 # ============================================================ 4 · DECISIONS
 s = slide(prs)
-titlebar(s, '3.  Which decisions — and how a plant makes them today')
+titlebar(s, '2.  Which decisions — and how a plant makes them today')
 
 txt(s, MX, 880000, CW, 260000,
     [{'t': 'FIVE DECISIONS FROM ONE PROCESS: CANNED LOW-ACID FOOD, THE NICHE MAPPED IN MOST DEPTH',
@@ -151,7 +112,7 @@ band(s, ry + 110000, 'THE COLUMN THAT IS MISSING',
 
 # ============================================================ 5 · THE EVIDENCE
 s = slide(prs)
-titlebar(s, '4.  What the published evidence actually is — 36 case studies read as a body')
+titlebar(s, '3.  What the published evidence actually is — 36 case studies read as a body')
 
 txt(s, MX, 880000, CW, 260000,
     [{'t': 'EVERY QUANTIFIED RESULT I COULD FIND FROM THE VENDORS ON THE MAP, GROUPED BY THE INDUSTRY IT CAME FROM',
@@ -203,7 +164,7 @@ txt(s, MX + 260000, ey + 30000, CW - 520000, lh(10.5),
 
 # ============================================================ 6 · THE WALL
 s = slide(prs)
-titlebar(s, '5.  Why desk research stops here')
+titlebar(s, '4.  Why the return on investment cannot be sized from desk research')
 
 box(s, MX, 1020000, CW, 1180000, [], fill=RUST_L, line=RUST, lw=2.0)
 txt(s, MX + 300000, 1120000, CW - 600000, lh(14),
@@ -211,7 +172,7 @@ txt(s, MX + 300000, 1120000, CW - 600000, lh(14),
       'size': 14, 'bold': True, 'color': RUST, 'lh': 1.3}])
 txt(s, MX + 300000, 1120000 + lh(14) + 50000, CW - 600000, 500000,
     [{'t': 'Every one gives the improvement — 25% fewer defects, $17.4M saved, five days down to four hours. None gives the '
-           'baseline it improved on. That is exactly the comparison you asked me to make.',
+           'baseline it improved on, which is the comparison a return-on-investment case has to rest on.',
       'size': 11, 'color': INK, 'lh': 1.35}])
 
 WHY = [
@@ -233,13 +194,13 @@ for head, body in WHY:
     wy += bh + lh(11.5) + 170000 + 70000
 
 band(s, wy + 40000, 'THE CONCLUSION I DRAW',
-     'The desk phase has done what it can. It located the opportunity precisely and established that the number your question '
-     'turns on does not exist in public. Getting it requires talking to the people who hold it.',
+     'The desk phase has done what it can. It located the opportunity precisely and established that the number the whole case '
+     'turns on does not exist in public. Getting it requires being inside a plant.',
      dark=True, size=12, line=17)
 
 # ============================================================ 7 · TWO TRACKS
 s = slide(prs)
-titlebar(s, '6.  The next phase — two kinds of conversation')
+titlebar(s, '5.  The next phase — two kinds of conversation')
 
 T1 = ('TRACK 1', STEEL, STEEL_L, 'Written mini-cases on the vendors themselves',
       'I approach the companies on the map as an HBS student writing short cases on how they sell and deploy, for this '
@@ -286,7 +247,7 @@ band(s, 4390000, 'WHY A PROJECT AND NOT JUST INTERVIEWS',
 
 # ============================================================ 8 · PLAN & ASKS
 s = slide(prs)
-titlebar(s, '7.  Plan for the remaining ten weeks, and what I need from you')
+titlebar(s, '6.  Plan for the remaining ten weeks, and what I need from you')
 
 WK = [('4–5', 'Vendor mini-cases begin', 'First four written up; approach letters out to Boston-area plants'),
       ('6', 'Mid-point review with you', 'Interim memo: which hypotheses survived the desk phase'),
@@ -312,9 +273,9 @@ txt(s, ax + 240000, 1120000, (MX + CW) - ax - 480000, lh(15),
     [{'t': 'Three asks', 'size': 15, 'bold': True, 'color': WHITE}])
 ASKS = ['An introduction to any food or beverage plant near Boston would be worth more than anything else on this page. '
         'Getting inside one is the whole next phase.',
-        'Is the decision-inventory framing on slide 3 the right shape for what you asked? If you want it cut differently, '
-        'better to know now than in week 11.',
-        'If you know anyone at the vendors on slide 2 — Sight Machine, Seeq, Augury, Litmus — a warm introduction turns a '
+        'A view on whether a pilot is the right vehicle for sizing the return, or whether a run of structured interviews would '
+        'get there faster and cheaper.',
+        'If you know anyone at the vendors on slide 1 — Sight Machine, Seeq, Augury, Litmus — a warm introduction turns a '
         'cold email into a conversation.']
 ay = 1120000 + lh(15) + 80000
 for i, a in enumerate(ASKS, 1):
