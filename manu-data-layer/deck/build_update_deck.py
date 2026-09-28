@@ -202,9 +202,9 @@ band(s, wy + 40000, 'THE CONCLUSION I DRAW',
 s = slide(prs)
 titlebar(s, '5.  The next phase — two kinds of conversation')
 
-T1 = ('TRACK 1', STEEL, STEEL_L, 'Written mini-cases on the vendors themselves',
-      'I approach the companies on the map as an HBS student writing short cases on how they sell and deploy, for this '
-      'independent project. It is a fair trade: they get a careful write-up, I get the economics.',
+T1 = ('TRACK 1', STEEL, STEEL_L, 'A written report on the companies already in this market',
+      'I approach the companies on the map as an HBS student writing a report on how this market sells and deploys, for '
+      'this independent project. It is a fair trade: they get a copy of the finished analysis, I get the economics.',
       ['HiveMQ, HighByte, Litmus — the data-translation layer',
        'Sight Machine, Oden, Seeq — the ones who traverse the whole stack',
        'Augury — the one that bypasses it',
@@ -249,7 +249,7 @@ band(s, 4390000, 'WHY A PROJECT AND NOT JUST INTERVIEWS',
 s = slide(prs)
 titlebar(s, '6.  Plan for the remaining ten weeks, and what I need from you')
 
-WK = [('4–5', 'Vendor mini-cases begin', 'First four written up; approach letters out to Boston-area plants'),
+WK = [('4–5', 'Report research begins', 'First four companies written up; approach letters out to Boston-area plants'),
       ('6', 'Mid-point review with you', 'Interim memo: which hypotheses survived the desk phase'),
       ('7–8', 'Plant project starts', 'One plant agreed; scope a piece of work that produces real cost data'),
       ('9–10', 'Operator interviews alongside', 'Plant leaders, QA managers, controls engineers off the 45-firm New England list'),
